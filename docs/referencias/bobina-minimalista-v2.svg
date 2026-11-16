@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 240 240" role="img" aria-labelledby="title">
+<title id="title">Bobina vertical con filamento translúcido</title>
+<defs>
+ <linearGradient id="filament-color" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#E87856"/><stop offset="1" stop-color="#E87856"/></linearGradient>
+<pattern id="damero" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#FFFFFF"/><path d="M0 0H8V8H0ZM8 8H16V16H8Z" fill="#C5CBD3"/></pattern>
+ <clipPath id="silueta-filamento"><path d="M90 40 H146 A39 71 0 0 1 146 182 H90 A39 71 0 0 1 90 40 Z M90 91 A11 20 0 1 1 90 131 A11 20 0 1 1 90 91 Z" clip-rule="evenodd"/></clipPath>
+</defs>
+<!-- Ocultar ambos grupos lateral para representar el refill. -->
+<g id="lateral-trasero" fill="#F3F4F6" stroke="#CBD0D7" stroke-width="2"><ellipse cx="146" cy="111" rx="49" ry="86"/></g>
+<!-- Opaco: ocultar damero y cambiar fill-opacity del color a 1. -->
+<g id="filamento">
+ <g clip-path="url(#silueta-filamento)">
+  <rect id="patron-translucido" x="50" y="39" width="136" height="144" fill="url(#damero)"/>
+  <rect id="relleno-color" x="50" y="39" width="136" height="144" fill="url(#filament-color)" fill-opacity="0.65"/>
+  <ellipse cx="90" cy="111" rx="39" ry="71" fill="#000" opacity=".07"/>
+  <g fill="none" stroke="#FFF" stroke-width="1.2" opacity=".18"><path d="M104 42 A39 71 0 0 1 104 180"/><path d="M116 42 A39 71 0 0 1 116 180"/><path d="M128 42 A39 71 0 0 1 128 180"/><path d="M140 42 A39 71 0 0 1 140 180"/></g>
+ </g>
+ <ellipse cx="90" cy="111" rx="11" ry="20" fill="#39414B"/>
+</g>
+<g id="lateral-delantero" stroke="#CBD0D7" stroke-width="2">
+ <path d="M90 25 A49 86 0 1 1 90 197 A49 86 0 1 1 90 25 Z M90 91 A11 20 0 1 0 90 131 A11 20 0 1 0 90 91 Z" fill="#F8F9FA" fill-rule="evenodd"/>
+ <ellipse cx="90" cy="111" rx="38" ry="69" fill="none" stroke="#E5E7EB"/>
+</g>
+</svg>

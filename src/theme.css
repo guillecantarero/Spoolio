@@ -1,0 +1,205 @@
+/* Shared palette. The first visit is dark; a saved choice overrides it. */
+:root{color-scheme:dark;--page:#121212;--surface:#1c1c1c;--raised:#292929;--line:#3b3b3b;--ink:#f2f2f2;--muted:#ababab;--blue:#40a3ff;--green:#40ce70;--orange:#ffad40;--red:#fa6565;--accent-ink:#151515;--scan-fill:#f2f2f2;--scan-ink:#171717}
+:root[data-theme=light]{color-scheme:light;--page:#f5f5f5;--surface:#ffffff;--raised:#eaeaea;--line:#d4d4d4;--ink:#181818;--muted:#626262;--blue:#0067c4;--green:#008c27;--orange:#995b00;--red:#bb2326;--accent-ink:#ffffff;--scan-fill:#202020;--scan-ink:#fafafa}
+:root{--accent:var(--green);--nav-active:color-mix(in srgb,var(--accent) 16%,var(--surface))}
+:root[data-section="0"]{--accent:var(--blue)}
+:root[data-section="1"]{--accent:var(--green)}
+:root[data-section="2"]{--accent:var(--scan-fill);--accent-ink:var(--scan-ink)}
+:root[data-section="3"]{--accent:var(--orange)}
+:root[data-section="4"]{--accent:var(--red)}
+:root[data-theme=light][data-section="3"]{--accent:#ff9800;--accent-ink:#242014}
+:root,body{background:var(--page);color:var(--ink)}
+button,input,select,dialog{background:var(--surface);color:var(--ink);border-color:var(--line)}
+button:hover{background:var(--raised)}
+input::placeholder{color:var(--muted);opacity:1}
+input[type=checkbox]{accent-color:var(--accent)}
+p,.muted,.fine,.eyebrow,.wordmark span,.demo-bar,.section-label,.section-label span,.stats span,.card-body small,.catalog-card>small,.hexes,.facts small,.timeline small,.history-row span,footer{color:var(--muted)}
+.wordmark,.text-button{color:var(--ink)}
+.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.primary:hover{background:var(--accent);filter:brightness(1.08)}
+.stats,.catalog-card,.detail,.panel,.spool-card{background:var(--surface);border-color:var(--line)}
+.stats>div,.card-footer,.card-actions,.facts,.timeline,.demo-bar{border-color:var(--line)}
+.card-art{background:radial-gradient(ellipse at center,var(--raised),var(--surface))}
+.badge,.pill,.card-footer strong,.avatar{background:var(--raised);color:var(--ink);border-color:var(--line)}
+.swatch>span{background:var(--surface);border-color:var(--raised)}
+.empty{background:var(--surface);border-color:var(--line)}
+.empty-icon{color:var(--accent)}
+.notice{background:var(--nav-active);color:var(--ink)}
+:root:not([data-theme=light]) .error{background:#452b25;color:#ffc6b7}
+:root:not([data-theme=light]) .danger{color:#f4aa98}
+.welcome{background:var(--page)}
+.welcome-art{background:var(--surface)}
+.reel:after{background:var(--surface)}
+.appearance{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.appearance p{margin:0}.appearance h2{margin-bottom:9px}.appearance .eyebrow{margin-bottom:9px}
+.theme-toggle{display:flex;align-items:center;gap:10px;white-space:nowrap}.theme-toggle span{font-size:22px}
+
+/* Five bottom destinations at every preview size. Adjacent keys tuck underneath
+   the octagon's lower diagonal edges; their outer edges remain square. */
+.app{display:block}
+.app>aside{position:fixed;inset:auto 0 0;width:100%;height:auto;padding:0 0 env(safe-area-inset-bottom);background:linear-gradient(transparent,var(--page) 24px);border:0;z-index:10;pointer-events:none;backdrop-filter:none}
+.app>aside>.wordmark,.app>aside>.account{display:none}
+.app>main{margin:0 auto;width:100%;max-width:1200px;padding:0 32px calc(140px + env(safe-area-inset-bottom))}
+.app nav{--scan:88px;display:grid;grid-template-columns:1fr 1fr var(--scan) 1fr 1fr;align-items:end;gap:5px;width:100%;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;pointer-events:auto}
+.app nav .nav-item{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:7px;height:70px;min-width:0;padding:8px 2px;border:0;border-radius:12px;background:var(--raised);color:var(--muted);font-size:10px;isolation:isolate}
+.app nav .nav-item:hover{color:var(--ink);filter:brightness(1.12)}
+.app nav .nav-item.active{background:var(--nav-active);color:var(--ink)}
+.app nav .nav-label{font-size:10px;font-weight:600;width:auto;white-space:nowrap;text-align:center}
+.app nav .nav-icon{width:24px;height:24px;flex-shrink:0}
+.app nav .nav-item-1{margin-right:-18px;padding-right:16px;clip-path:polygon(0 0,calc(100% - 24px) 0,calc(100% - 24px) 56%,100% 100%,0 100%)}
+.app nav .nav-item-3{margin-left:-18px;padding-left:16px;clip-path:polygon(24px 0,100% 0,100% 100%,0 100%,24px 56%)}
+.app nav .nav-item-2{width:var(--scan);height:var(--scan);align-self:end;margin-bottom:7px;background:transparent;color:var(--scan-ink);border-radius:28px;z-index:2;filter:drop-shadow(0 5px 8px #0003)}
+.app nav .nav-item-2:hover,.app nav .nav-item-2.active{background:transparent;color:var(--scan-ink)}
+.scan-shape{position:absolute;inset:0;width:100%;height:100%;z-index:-1;fill:var(--scan-fill)}
+.app nav .nav-item-2 .nav-icon{width:34px;height:34px;margin-left:5px;stroke-width:1.5}
+.app nav .nav-item-2.active .scan-shape{stroke:var(--ink);stroke-width:2px}
+.app nav .nav-item:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--accent)}
+.app nav .nav-item-2:focus-visible .scan-shape{stroke:var(--ink);stroke-width:4px}
+@media(max-width:700px){
+  .app>main{padding-inline:17px}
+  .app>aside{padding-inline:0;padding-bottom:env(safe-area-inset-bottom)}
+  .app nav{--scan:78px;gap:4px;padding:0;border-radius:0}
+  .app nav .nav-item{height:65px;gap:7px;border-radius:9px}
+  .app nav .nav-item-2{height:var(--scan);margin-bottom:8px}
+  .app nav .nav-label{font-size:9px;letter-spacing:-.25px}
+  .app nav .nav-icon{width:22px;height:22px}
+  .app nav .nav-item-1{padding-right:14px}
+  .app nav .nav-item-3{padding-left:14px}
+  .appearance{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:360px){
+  .app nav{--scan:68px;gap:3px;padding-inline:0}
+  .app nav .nav-label{font-size:8px;letter-spacing:-.3px}
+  .app nav .nav-item-2{margin-bottom:12px}
+  .app nav .nav-item-2 .nav-icon{width:29px;height:29px}
+}
+
+/* Each destination retains its own accent, independently of the current page. */
+.app nav .nav-item-0{--item-accent:var(--blue)}
+.app nav .nav-item-1{--item-accent:var(--green)}
+.app nav .nav-item-3{--item-accent:var(--orange)}
+.app nav .nav-item-4{--item-accent:var(--red)}
+.app nav .nav-item:not(.nav-item-2){color:var(--item-accent)}
+.app nav .nav-item:not(.nav-item-2).active{background:color-mix(in srgb,var(--item-accent) 18%,var(--surface));box-shadow:inset 0 3px 0 var(--item-accent)}
+.app nav .nav-item:not(.nav-item-2):focus-visible{box-shadow:inset 0 0 0 3px var(--item-accent)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline-color:var(--accent)}
+.dot{background:var(--muted)}
+.welcome-art .reel-one{background:#767676}.welcome-art .reel-two{background:#b9b9b9}.welcome-art .reel-three{background:linear-gradient(130deg,#d4d4d4,#898989,#4a4a4a)}
+
+/* Compact geometry; circular filament previews and the scan octagon are intentional. */
+button,input,select{border-radius:4px}
+.stats,.catalog-card,.detail,.panel,.spool-card,.empty{border-radius:5px}
+.notice,.error,dialog{border-radius:5px}
+.badge,.pill,.card-footer strong{border-radius:3px}
+.app nav .nav-item:not(.nav-item-2){border-radius:3px}
+header{margin:28px 0 24px}
+header h1{margin:0}
+.empty{padding:32px 18px}
+.empty-icon{font-size:40px;margin-bottom:12px}
+.empty h2{font-size:21px}
+:root[data-theme=light] .primary{--accent:#0085ff;--accent-ink:#101010}
+:root[data-theme=light][data-section="1"] .primary{--accent:#00ba34}
+:root[data-theme=light][data-section="2"] .primary{--accent:var(--scan-fill);--accent-ink:var(--scan-ink)}
+:root[data-theme=light][data-section="3"] .primary{--accent:#ff9800}
+:root[data-theme=light][data-section="4"] .primary{--accent:#e92c2c;--accent-ink:#ffffff}
+
+/* Compact counters occupy the top slot, above the section heading. */
+.app>main>.stats{margin:18px 0 0;padding-block:18px}
+@media(max-width:700px){.app>main>.stats{margin-top:14px;padding-block:13px}}
+
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Approved inline spool drawing; no CSS opacity or color effects on its surfaces. */
+.bobina-icon{display:block;max-width:100%;height:auto;flex-shrink:0}
+.detail-top>.bobina-icon{width:200px}
+.catalog-head>.bobina-icon{width:76px}
+.inventory-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;color:var(--muted);font-size:12px}
+.view-switch{display:flex;gap:4px}
+.view-switch button{font-size:12px;padding:8px 11px;font-weight:500}
+.view-switch button[aria-pressed=true]{background:var(--nav-active);color:var(--ink);border-color:var(--accent)}
+.inventory-items{display:grid;gap:14px}
+.inventory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.inventory-items .spool-card{min-width:0;box-shadow:none;font-weight:400;background:var(--surface)}
+.inventory-items .card-art{height:auto;background:transparent;min-width:0}
+.inventory-grid .card-art{padding:8px 8px 0}
+.inventory-grid .bobina-icon{width:100%;max-width:210px}
+.inventory-items .card-body{padding:0 16px 18px;min-width:0}
+.inventory-items .card-body small{display:block;color:var(--muted);font-size:12px}
+.inventory-items .card-material{display:block;color:var(--muted);font-size:12px;line-height:1.45;margin-top:4px;overflow-wrap:anywhere}
+.inventory-items .card-body h2{font-size:17px;margin:7px 0 0;line-height:1.35;overflow-wrap:anywhere}
+.inventory-list{grid-template-columns:minmax(0,1fr);gap:9px}
+.inventory-list .spool-card{display:flex;align-items:center;text-align:left}
+.inventory-list .card-art{width:128px;flex-shrink:0}
+.inventory-list .bobina-icon{width:128px}
+.inventory-list .card-body{padding:15px 18px 15px 4px}
+.filament-preview{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--raised);border-radius:4px;margin:12px 0 20px;padding:5px}
+.filament-preview .bobina-icon{min-width:0;max-width:48%}
+@media(max-width:700px){
+  .inventory-items{gap:7px}
+  .inventory-grid .card-art{padding:3px 0 0}
+  .inventory-grid .card-body{padding:0 7px 12px}
+  .inventory-grid .card-body small,.inventory-grid .card-material{font-size:10px}
+  .inventory-grid .card-body h2{font-size:12px;margin-top:5px}
+  .inventory-list .card-art,.inventory-list .bobina-icon{width:104px}
+  .inventory-list .card-body{padding:12px 10px 12px 0}
+  .detail-top>.bobina-icon{width:135px}
+  .detail-top{gap:10px}
+}
+
+
+.scan-composite{display:block;position:relative;width:62px;height:58px}
+.scan-composite>.bobina-icon{position:absolute;left:2px;top:0;width:58px}
+.app nav .nav-item-2 .scan-composite>.nav-icon{position:absolute;left:2px;bottom:2px;top:auto;width:25px;height:25px;margin:0;padding:3px;background:transparent;border-radius:0;stroke-width:1.8}
+.scan-hub{display:flex;align-items:center;flex-direction:column;gap:15px;padding:24px 0 48px}
+.scan-primary{display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(100%,340px);min-height:260px;background:var(--scan-fill);color:var(--scan-ink);border:0;border-radius:5px;font-size:23px;gap:8px}
+.scan-primary:hover{background:var(--scan-fill);filter:brightness(.95)}
+.scan-hub-art{position:relative;display:block;width:200px;height:180px}
+.scan-hub-art>.bobina-icon{position:absolute;left:10px;top:0}
+.scan-hub-art>.nav-icon{position:absolute;left:27px;bottom:16px;width:48px;height:48px;padding:6px;background:transparent;border-radius:0}
+.scan-hub .fine{margin:0;text-align:center}
+.scan-manual{font-size:13px;padding:12px 20px}
+@media(max-width:360px){.scan-composite{transform:scale(.88)}}
+
+/* Same warm off-white shell in both themes, with restrained tonal adjustment. */
+:root{--spool-front:#EAE7DE;--spool-back:#DEDAD0;--spool-outline:#B4AFA2;--spool-inner:#CEC9BD}
+:root[data-theme=light]{--spool-front:#E0DCD1;--spool-back:#D3CEC2;--spool-outline:#A09A8D;--spool-inner:#BEB8AA}
+
+/* Section hierarchy: title, personal/shared counters, then search. */
+.app>main>header h1{color:var(--accent)}
+:root[data-theme=light][data-section="3"] .app>main>header h1{color:var(--orange)}
+.app>main>.stats{margin:0 0 24px}
+.stats>div:first-child strong,.stats>div:first-child span{color:var(--blue)}
+.stats>div:nth-child(2) strong,.stats>div:nth-child(2) span{color:var(--green)}
+@media(max-width:700px){.app>main>.stats{margin:0 0 20px}}
+
+.inventory-toolbar{flex-wrap:wrap;gap:8px}
+.inventory-toolbar>span{margin-right:auto}
+.order-button{font-size:12px;font-weight:500;padding:8px 10px}
+.order-panel{padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:4px;margin-bottom:16px}
+.order-panel label{display:grid;gap:8px;font-size:12px}
+.order-panel p{margin:10px 0 0}
+@media(max-width:360px){.view-switch button{padding-inline:8px;font-size:11px}.order-button{font-size:11px}}
+
+.inventory-toolbar .order-select{width:auto;max-width:100%;font-size:12px;padding:10px 8px;min-height:44px}
+@media(max-width:700px){.inventory-toolbar>span{flex-basis:100%}.inventory-toolbar .order-select{flex:1;min-width:0;width:0;font-size:11px}.inventory-toolbar .view-switch button{padding-inline:8px;font-size:11px}}
+
+.inventory-items .spool-card{position:relative}
+.inventory-grid .spool-card{display:flex;flex-direction:column;align-items:stretch}
+.inventory-grid .card-art{display:grid;place-items:center}
+.inventory-grid .card-body{flex:1}
+.spool-location{display:block;color:var(--muted);font-size:11px;margin-top:8px;overflow-wrap:anywhere}
+.remaining-bar{position:relative;flex-shrink:0;background:var(--raised);overflow:hidden}
+.remaining-fill{display:block;background:var(--remaining-color)}
+.inventory-grid .remaining-bar{height:21px;width:100%;border-top:1px solid var(--line)}
+.inventory-grid .remaining-fill{height:100%;width:var(--remaining)}
+.remaining-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:650;color:#151515}
+.inventory-grid .remaining-label{inset:0 auto 0 0;width:var(--remaining);white-space:nowrap}
+.inventory-list .spool-card{padding-right:36px;min-height:118px}
+.inventory-list .remaining-bar{position:absolute;inset:0 0 0 auto;width:29px;border-left:1px solid var(--line)}
+.inventory-list .remaining-fill{position:absolute;bottom:0;left:0;width:100%;height:var(--remaining)}
+.inventory-list .remaining-label{writing-mode:vertical-rl;inset:auto 0 0;height:var(--remaining);white-space:nowrap;font-size:10px}
+@media(max-width:700px){.spool-location{font-size:10px}.inventory-grid .remaining-label{font-size:8px}.inventory-grid .remaining-bar{height:19px}}
+
+:root{--remaining-track:#383838}
+:root[data-theme=light]{--remaining-track:#DDDDDD}
+.remaining-bar{background:var(--remaining-track)}
