@@ -41,10 +41,31 @@ test('escaneo inicia lectura y cambiar a inventario la cancela', async ({ page }
   await page.getByRole('navigation').getByRole('button', { name: 'Escanear', exact: true }).click();
   await expect(page.locator('.nfc-radar')).toHaveClass(/is-reading/);
   await expect(page.getByRole('status')).toContainText('Buscando etiqueta NFC');
+  await expect(page.locator('.nfc-radar-control button')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Añadir manualmente' })).toHaveCount(0);
   await page.getByRole('navigation').getByRole('button', { name: 'Inventario', exact: true }).click();
   await page.getByRole('button', { name: 'Añadir bobina', exact: true }).click();
   await expect(page.locator('dialog')).toBeVisible();
   await expect.poll(() => page.evaluate(() => (window as unknown as { nfcCancelled: boolean }).nfcCancelled)).toBe(true);
   await expect(page.locator('.nfc-radar')).toHaveCount(0);
+});
+
+test('NFC fallido ofrece reintento y oculta el botón al volver a leer', async ({ page }) => {
+  await page.route('**/src/nfc.ts', route => route.fulfill({ contentType: 'application/javascript', body: `
+    export const nativeNfc = true;
+    let calls = 0;
+    export function scanUid() {
+      if (++calls === 1) return Promise.reject(new Error('Activa NFC para leer etiquetas.'));
+      return new Promise(() => {});
+    }
+    export async function cancelNfc() {}
+  ` }));
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Entrar como Mi perfil' }).click();
+  await page.getByRole('navigation').getByRole('button', { name: 'Escanear', exact: true }).click();
+  await expect(page.getByRole('alert')).toContainText('Activa NFC');
+  await page.getByRole('button', { name: 'Volver a intentar' }).click();
+  await expect(page.getByRole('status')).toContainText('Buscando etiqueta NFC');
+  await expect(page.locator('.nfc-radar-control button')).toHaveCount(0);
+  await expect(page.getByRole('alert')).toHaveCount(0);
 });

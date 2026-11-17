@@ -20,6 +20,9 @@ export function NfcRadar({ onRead, paused }: { onRead: (uid: string) => void; pa
     if (active.current || paused) return;
     const run = ++generation.current;
     active.current = true; setReading(true); setError('');
+    if (androidDevice) void getDeviceInfo().then(info => {
+      if (mounted.current && run === generation.current) setNfcEnabled(info.supported && info.enabled);
+    }).catch(() => {});
     try {
       const uid = await scanUid();
       if (mounted.current && run === generation.current) onRead(uid);
@@ -53,7 +56,7 @@ export function NfcRadar({ onRead, paused }: { onRead: (uid: string) => void; pa
     <p role="status">{reading ? 'Buscando etiqueta NFC…' : nfcEnabled === false ? 'NFC desactivado o no disponible' : nativeNfc ? 'Lectura detenida' : 'NFC disponible en la app Android'}</p>
     {reading && <p className="fine">Acerca la etiqueta a la parte trasera del móvil.</p>}
     {error && <p role="alert" className="error">{error}</p>}
-    {nativeNfc && <button type="button" disabled={paused} onClick={() => void (reading ? stop() : scan())}>{reading ? 'Cancelar lectura' : 'Volver a escanear'}</button>}
+    {nativeNfc && !reading && error && <button type="button" disabled={paused} onClick={() => void scan()}>Volver a intentar</button>}
 
   </div>;
 }

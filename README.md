@@ -4,7 +4,7 @@ Aplicación Android privada para gestionar el inventario compartido de filamento
 
 ## Estado
 
-Entrega de pruebas **0.2.0**, Android `versionCode 3` (17/11/2026). APK en `artifacts/Spoolio-0.2.0-debug.apk` (también `artifacts/Spoolio-debug.apk`), excluida de Git. Compilación Android y firma verificadas; 29 pruebas unitarias y 9 E2E correctas. Pendiente de probar esta entrega físicamente en Pixel.
+Entrega de pruebas **0.2.1**, Android `versionCode 4` (17/11/2026). APK en `artifacts/Spoolio-0.2.1-debug.apk` (también `artifacts/Spoolio-debug.apk`), excluida de Git. Compilación Android y firma verificadas; 29 pruebas unitarias y 11 E2E correctas. Pendiente de probar esta entrega físicamente en Pixel.
 
 Primera versión funcional de demostración local. Incluye las cinco secciones, catálogo multicolor, muestras, altas manuales, filtros, cambios de ubicación y retirada con historial. Incluye una versión Android de prueba con lectura nativa del UID NFC para crear, asociar y consultar bobinas. Véase [Prueba Android y NFC](docs/ANDROID_NFC.md).
 
@@ -56,7 +56,7 @@ El guardado requiere un navegador con Web Locks en un origen seguro como localho
 
 La demo no constituye una barrera de seguridad: todos los perfiles locales son seleccionables. Los permisos reales, RLS, fecha de servidor, validación de operaciones y autenticación se implementarán en el backend. La validación local no los sustituye. Las ediciones de catálogo entre pestañas no tienen todavía control de versión; el control de conflictos se aplica a unidades y movimientos.
 
-Pendientes: conexión Supabase/servidor, migraciones SQL y cuentas reales. El usuario confirmó NFC funcional en el Pixel en la versión anterior; hay que validar esta APK 0.2.0 en el teléfono. Android usa Capacitor 8 y un complemento local limitado a leer UID; no escribe ni descifra etiquetas.
+Pendientes: conexión Supabase/servidor, migraciones SQL y cuentas reales. El usuario confirmó NFC funcional en el Pixel en la versión anterior; hay que validar esta APK 0.2.1 en el teléfono. Android usa Capacitor 8 y un complemento local limitado a leer UID; no escribe ni descifra etiquetas.
 
 Las herramientas se eligieron consultando la [guía oficial de Vite](https://vite.dev/guide/) y la [integración de Capacitor](https://capacitorjs.com/docs/getting-started). El lockfile fija las versiones instaladas para reproducir esta etapa.
 
@@ -111,7 +111,7 @@ sincronizan mediante GitHub. Tampoco se incluyen dependencias, compilaciones,
 resultados de pruebas ni archivos `.env`.
 
 
-## Entrega 0.2.0 y continuidad desde casa
+## Entrega 0.2.1 y continuidad desde casa
 
 ### Qué incluye
 
@@ -130,7 +130,7 @@ La versión anterior con estantería está guardada en el commit `315176e`. La v
 
 1. Exportar una copia JSON desde Configuración antes de instalar.
 2. Transferir `artifacts/Spoolio-debug.apk` al móvil e instalar **encima** de la app existente, sin desinstalar ni borrar datos.
-3. Comprobar en Configuración: **0.2.0 · Compilación 3**.
+3. Comprobar en Configuración: **0.2.1 · Compilación 4**.
 4. Probar crear bobina manual, leer ambas etiquetas, volver a escanear, editar, mover y retirar una unidad de prueba.
 5. Apagar NFC, entrar en Escanear y comprobar Benchy encallado; activarlo, volver y pulsar «Volver a escanear» si la lectura se detuvo.
 6. Cerrar/reabrir y comprobar que conserva unidades y etiquetas. La importación JSON todavía no está implementada.
@@ -157,7 +157,7 @@ Para Android: JDK 21, SDK 36, herramientas de compilación 35/36 y la firma de p
 
 ### Próximo paso: base de datos (todavía no implementada)
 
-La decisión vigente es **Supabase (PostgreSQL + Auth)** provisional, migrable más adelante al NUC. Si se prefiere alojarlo directamente en el NUC, concretar ese cambio antes de crear infraestructura. No hay proyecto Supabase configurado en el código, cliente instalado, migraciones SQL ni variables de entorno consumidas; la APK 0.2.0 NO se conectará automáticamente al crear una base de datos.
+La decisión vigente es **Supabase (PostgreSQL + Auth)** provisional, migrable más adelante al NUC. Si se prefiere alojarlo directamente en el NUC, concretar ese cambio antes de crear infraestructura. No hay proyecto Supabase configurado en el código, cliente instalado, migraciones SQL ni variables de entorno consumidas; la APK 0.2.1 NO se conectará automáticamente al crear una base de datos.
 
 Orden recomendado para la siguiente sesión:
 
@@ -170,3 +170,7 @@ Orden recomendado para la siguiente sesión:
 7. Probar entre dos cuentas/dispositivos y ante cambios simultáneos. Después generar otra APK cuando se solicite y validar en Pixel.
 
 Consultar `AGENTS.md`, `docs/REQUISITOS.md`, `docs/VALIDACION.md` y `docs/ANDROID_NFC.md` antes de continuar. No implementar ESP32, compras, estadísticas ni reciclado de etiquetas en esta etapa.
+
+- Incluido en APK 0.2.1: ubicación en ficha con pulsación corta para desplegar botones de personas/Fablab y guardar al elegir; pulsación larga (600 ms) para mover al usuario conectado. Conserva historial, sin movimiento duplicado si ya está allí. Guardado sin aviso de éxito y apertura táctil corregida.
+
+- Próxima versión (código web posterior a APK 0.2.1): Escanear no muestra Cancelar lectura ni otros botones mientras busca una etiqueta. Solo aparece Volver a intentar si la lectura falla (NFC apagado, error o tiempo agotado). Salir cancela internamente. La APK 0.2.1 no incluye este cambio; no generar otra hasta petición explícita.

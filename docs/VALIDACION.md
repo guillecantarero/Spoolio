@@ -100,3 +100,19 @@ Las comprobaciones de actor en el modelo local son validaciones funcionales, no 
 - Respaldo anterior conservado en `artifacts/Spoolio-0.1.1-nfc-backup.apk` (local, excluido de Git).
 - README y AGENTS actualizados con estado, instalación, traspaso a otro PC y próximos pasos del backend. No hay conexión remota ni migraciones implementadas.
 - Pendiente: instalar esta entrega sobre la anterior y verificar físicamente NFC, datos conservados y cambio activado/desactivado en Pixel. La confirmación física previa no sustituye esta prueba.
+
+
+## Entrega 0.2.1 — 17/11/2026
+
+- APK Android compilada: versión 0.2.1, versionCode 4. Incluye ubicación con pulsación corta/larga, apertura táctil corregida y guardado sin aviso de éxito.
+- 29 pruebas unitarias y 11 E2E correctas; build web y Android correctos.
+- Assets de APK comparados byte a byte con dist.
+- APK: `artifacts/Spoolio-0.2.1-debug.apk`, alias `artifacts/Spoolio-debug.apk`.
+- SHA256: `7b4db6aec2228199fb7484cb2974bdf19d80ddbecd2dbf295a406764b13edde8`.
+- Se conserva APK 0.2.0 como respaldo. Pendiente de instalación y prueba física en Pixel.
+
+## Cambios web posteriores a 0.2.1 — 17/11/2026
+
+- Escanear sin botón de cancelar durante lectura; Volver a intentar solo tras error. Cancelación interna al salir conservada.
+- Build correcto, 29 pruebas unitarias y 12 E2E correctas; nuevo recorrido con puente NFC simulado: fallo por NFC apagado, reintento y ausencia de botones durante lectura.
+- No se sincronizó ni generó otra APK. Pendiente de la próxima entrega Android y validación física.

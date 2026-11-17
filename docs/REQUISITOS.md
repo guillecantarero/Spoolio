@@ -1,6 +1,6 @@
 # Spoolio — Requisitos y decisiones
 
-Estado: demostración local Android con NFC confirmado en Pixel en una versión anterior; entrega 0.2.0 preparada para nueva validación física. Backend pendiente.
+Estado: demostración local Android con NFC confirmado en Pixel en una versión anterior; entrega 0.2.1 preparada para nueva validación física. Backend pendiente.
 
 Última actualización: 17 de noviembre de 2026.
 
@@ -38,7 +38,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 | NAV-04 | Catálogo | Consultar, añadir y modificar perfiles de filamento, tengan o no unidades en inventario. Mostrar si la muestra está hecha. |
 | NAV-05 | Configuración | Datos de la cuenta y ajustes. El detalle de preferencias se concretará después. |
 
-- **NAV-06.** El botón octogonal inicia directamente la lectura NFC y muestra la animación decorativa Benchy y el estado de lectura por separado. Permite cancelar y reintentar; salir cancela la lectura. En navegador se indica la indisponibilidad de NFC; el Benchy sigue animándose como decoración. Escanear no ofrece alta manual: esta se inicia mediante un botón de bobina neutra con + a la derecha del título de Mis bobinas e Inventario, igual que el alta de filamentos del catálogo. Se mantiene el alta desde un perfil de catálogo y desde una etiqueta desconocida.
+- **NAV-06.** El botón octogonal inicia directamente la lectura NFC y muestra la animación decorativa Benchy y el estado de lectura por separado. Durante una lectura activa no muestra botones. Si falla (NFC apagado, error o tiempo agotado), muestra «Volver a intentar»; al reintentar se oculta mientras lee. Salir cancela la lectura automáticamente. En navegador se indica la indisponibilidad de NFC; el Benchy sigue animándose como decoración. Escanear no ofrece alta manual: esta se inicia mediante un botón de bobina neutra con + a la derecha del título de Mis bobinas e Inventario, igual que el alta de filamentos del catálogo. Se mantiene el alta desde un perfil de catálogo y desde una etiqueta desconocida.
 - **NAV-07.** Buscar y filtrar inventario por marca, material, color y ubicación. Las unidades retiradas quedan fuera de las vistas activas.
 - **NAV-08.** Navegación fija inferior en este orden: Mis bobinas, Inventario, Escanear, Catálogo, Configuración. Escanear es el botón central más grande, con forma de octógono de esquinas redondeadas e icono NFC minimalista sin texto visible. Los cuatro botones laterales son cuadrados; los adyacentes se ajustan al contorno del octógono.
 - **NAV-09.** La barra inferior ocupa todo el ancho de la pantalla, sin marco ni contenedor exterior redondeado y sin márgenes laterales. Mantener el área segura inferior del dispositivo.
@@ -151,7 +151,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **HIS-02.** Cada transferencia registra unidad, ubicación de origen, ubicación de destino, fecha del servidor y usuario que realizó la acción.
 - **HIS-03.** Actualizar ubicación y crear el evento en una única transacción.
 - **HIS-04.** Gestionar modificaciones simultáneas para evitar cambios perdidos e historiales incoherentes.
-- **HIS-05.** El botón de ubicación muestra una bobina con el nombre de la ubicación actual y abre un selector de todas las personas y Fablab. Al guardar se registra el traslado; seleccionar la ubicación actual no genera movimiento. Sustituye al botón «La tengo yo».
+- **HIS-05.** El botón de ubicación muestra una bobina con el nombre de la ubicación actual y, con pulsación corta, abre un desplegable de botones para todas las personas y Fablab, sin buscador ni confirmación adicional. Elegir un botón guarda automáticamente, sin aviso de guardado correcto; los errores sí se muestran. Mantener pulsado 600 ms mueve directamente a la ubicación del usuario conectado, sin abrir el desplegable al soltar. Desplazar el dedo o cancelar el gesto anula la pulsación larga. Se registra el traslado; seleccionar la ubicación actual no genera movimiento. Sustituye al botón «La tengo yo».
 - **HIS-06.** Permitir cambios manuales de ubicación desde la ficha.
 - **HIS-07.** Registrar alta y retirada. La retirada y su evento se guardan de manera atómica.
 - **HIS-08.** Conservar el historial después de retirar la unidad. La pantalla de consulta de historial y las estadísticas pueden incorporarse más adelante.
@@ -247,6 +247,10 @@ El paso 1 está completado. El usuario ha solicitado avanzar con el recorrido ma
 
 | Fecha | Cambio |
 | --- | --- |
+| 2026-11-17 | Próxima APK: Escanear sin botón de cancelar; reintento solo tras fallo de lectura. Cambio web posterior a 0.2.1. |
+| 2026-11-17 | Autorizada APK 0.2.1 (código 4) con selector de ubicación táctil corregido, pulsación larga y guardado sin aviso. |
+| 2026-11-17 | Corregida apertura táctil del selector de ubicación y eliminado su aviso de guardado correcto. |
+| 2026-11-17 | Ubicación en ficha: pulsación corta despliega botones con guardado inmediato; larga mueve al usuario conectado. Cambio web posterior a APK 0.2.0. |
 | 2026-11-17 | Autorizada APK 0.2.0 (código 3), sin controles temporales, con documentación de continuidad desde casa. |
 | 2026-11-17 | Benchy con volumen y perspectiva según referencia del usuario, en blancos y grises sin contorno. |
 | 2026-11-17 | Versión de estantería guardada en 315176e; nueva variante ligera de escaneo con Benchy animado. |
