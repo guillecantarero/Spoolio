@@ -1,5 +1,7 @@
 # Prueba Android y NFC
 
+Entrega actual: **0.2.0**, código de versión **3**.
+
 ## Alcance
 
 APK de prueba local: selecciona un perfil demo; no hay autenticación real ni
@@ -21,11 +23,11 @@ Es una compilación debug para pruebas personales, no una versión de distribuci
 
 ## Recorrido de prueba física
 
-1. En el botón central, pulsa **Escanear** y acerca un lateral de la bobina a la zona NFC del Pixel.
+1. Pulsa el botón central (la lectura empieza automáticamente) y acerca un lateral de la bobina a la zona NFC del Pixel.
 2. Si es nueva, pulsa **Crear bobina con esta etiqueta**. Selecciona el filamento, ubicación,
    formato y cantidad. Puedes crear un perfil si no existe; se conserva el UID leído.
-3. Pulsa **Leer segunda etiqueta** y acerca el otro lateral. Si falla, continúa sin ella.
-   También puedes hacer un alta manual con cero etiquetas y añadirlas después desde la ficha.
+3. Pulsa el botón de circuito NFC con + (**Leer segunda etiqueta**) y acerca el otro lateral. Si falla, continúa sin ella.
+   También puedes hacer un alta manual desde la bobina con + de Inventario/Mis bobinas, con cero etiquetas y añadirlas después desde la ficha.
 4. Guarda. Vuelve a **Escanear**: cualquiera de las etiquetas asociadas debe abrir la ficha.
 5. Cierra y abre la app y vuelve a escanear para comprobar persistencia.
 6. Prueba una etiqueta desconocida de una bobina ya registrada: elige **Asociar a una bobina existente**.

@@ -290,3 +290,17 @@ header h1{margin:0}
 .scan-shelf{position:relative;isolation:isolate;display:flex;align-items:flex-end;justify-content:flex-start;padding:0 4px 8px;border-bottom:5px solid var(--line);box-shadow:0 5px 8px -6px #0008;box-sizing:border-box}
 .shelf-spool{position:relative;display:block;flex-shrink:0}
 .scan-shelf .bobina-icon{max-width:none;margin-bottom:-2px;transform:translate(-17%,calc(17.5% + 6px))}
+
+/* Benchy variant: one SVG, transform-only looping animation. */
+.scan-hub>.nfc-radar-control{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0;padding:0 0 24px}
+.nfc-radar.benchy-scene{width:min(100%,380px);height:auto;min-height:160px;flex:1;margin:0;display:grid;place-items:center}
+.benchy-animation{display:block;width:100%;max-height:100%;color:var(--ink);overflow:visible}
+.benchy-float{animation:benchy-heave 4.8s ease-in-out infinite;will-change:transform}
+.benchy-boat{transform-origin:162px 190px;animation:benchy-sailing 6.4s ease-in-out infinite;will-change:transform}
+.benchy-water{animation:benchy-waves 4.8s ease-in-out infinite;will-change:transform}
+@keyframes benchy-heave{0%,100%{transform:translate(0,4px)}50%{transform:translate(1px,-1px)}}
+@keyframes benchy-sailing{0%,100%{transform:rotate(-1.8deg)}50%{transform:rotate(1.8deg)}}
+@keyframes benchy-waves{0%,100%{transform:translate(-6px,-1px) scaleY(1)}50%{transform:translate(6px,1px) scaleY(.99)}}
+.is-grounded .benchy-float{animation:none;transform:translateY(6px);will-change:auto}
+.is-grounded .benchy-boat{animation:none;transform:rotate(-9deg);will-change:auto}
+@media(prefers-reduced-motion:reduce){.benchy-float,.benchy-boat,.benchy-water{animation:none;will-change:auto}}

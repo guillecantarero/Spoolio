@@ -80,3 +80,23 @@ Las comprobaciones de actor en el modelo local son validaciones funcionales, no 
 - Configuración: estado NFC y versión, con refresco manual y al volver al primer plano. Build web y dos pruebas E2E correctas (web y puente Android simulado con cambio desactivado/activado). Consulta nativa implementada en fuente Java; compilación y prueba física pendientes de la próxima APK autorizada. No se sincronizó ni generó APK.
 
 - Estantería decorativa en Escanear: perfiles aleatorios del catálogo, adaptación mediante ResizeObserver y ocultación si no caben filas. Build y tres pruebas E2E correctas, incluyendo móvil, escritorio y horizontal; captura móvil revisada y compensado el margen interno del SVG para apoyar las bobinas en los estantes. Sin APK.
+
+- Variante Benchy: versión previa guardada en commit local 315176e. SVG único con balanceo y ondas mediante CSS, estantería fuera del render y movimiento reducido respetado. Build web y tres pruebas E2E correctas (incluye NFC simulado); captura móvil revisada. No se midió una mejora de tiempo de carga ni se generó APK.
+
+- Benchy revisado según referencia: perspectiva de tres cuartos, volúmenes blancos/grises y ausencia de contorno. Compilación y prueba visual responsive/movimiento reducido correctas; captura móvil inspeccionada. Se conserva el balanceo CSS y no se genera APK.
+
+- Benchy: flotación y balanceo independientes de baja amplitud, estado encallado inmóvil ligado al NFC y controles temporales de simulación visual/restauración. Build y cuatro pruebas E2E correctas, incluida consulta simulada de NFC apagado; captura encallada revisada. Prueba física pendiente de próxima APK autorizada.
+
+
+## Entrega 0.2.0 — 17/11/2026
+
+- Retirados todos los controles temporales del Benchy. NFC apagado/activo se consulta del dispositivo; la animación no altera la lectura.
+- 29 pruebas unitarias y 9 recorridos E2E correctos. Compilación web correcta.
+- Android compilado correctamente (JDK21, SDK36, Gradle8.14.3). Avisos no bloqueantes de flatDir, formato XML del SDK y API Android obsoleta.
+- APK `com.guillecantarero.spoolio`, versión 0.2.0, versionCode 3, minSdk24/targetSdk36.
+- Firma APK v2 válida y certificado idéntico al de 0.1.1-nfc. Assets comparados byte a byte con dist; plugin NFC y consulta deviceInfo presentes en DEX.
+- APK: `artifacts/Spoolio-0.2.0-debug.apk` y alias `artifacts/Spoolio-debug.apk`.
+- SHA256: `3c4ea663754da9ea6ceed2f64aca099642fd7e50bd25e4b1e8072d4cebbadb57`.
+- Respaldo anterior conservado en `artifacts/Spoolio-0.1.1-nfc-backup.apk` (local, excluido de Git).
+- README y AGENTS actualizados con estado, instalación, traspaso a otro PC y próximos pasos del backend. No hay conexión remota ni migraciones implementadas.
+- Pendiente: instalar esta entrega sobre la anterior y verificar físicamente NFC, datos conservados y cambio activado/desactivado en Pixel. La confirmación física previa no sustituye esta prueba.

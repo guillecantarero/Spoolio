@@ -1,6 +1,6 @@
 # Spoolio — Requisitos y decisiones
 
-Estado: demostración local con versión Android y lector NFC nativo; backend y validación física pendientes.
+Estado: demostración local Android con NFC confirmado en Pixel en una versión anterior; entrega 0.2.0 preparada para nueva validación física. Backend pendiente.
 
 Última actualización: 17 de noviembre de 2026.
 
@@ -38,7 +38,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 | NAV-04 | Catálogo | Consultar, añadir y modificar perfiles de filamento, tengan o no unidades en inventario. Mostrar si la muestra está hecha. |
 | NAV-05 | Configuración | Datos de la cuenta y ajustes. El detalle de preferencias se concretará después. |
 
-- **NAV-06.** El botón octogonal inicia directamente la lectura NFC y muestra el mismo símbolo NFC de ondas, animado durante la búsqueda. Permite cancelar y reintentar; salir cancela la lectura. En navegador el símbolo permanece estático e indica la indisponibilidad de NFC. Escanear no ofrece alta manual: esta se inicia mediante un botón de bobina neutra con + a la derecha del título de Mis bobinas e Inventario, igual que el alta de filamentos del catálogo. Se mantiene el alta desde un perfil de catálogo y desde una etiqueta desconocida.
+- **NAV-06.** El botón octogonal inicia directamente la lectura NFC y muestra la animación decorativa Benchy y el estado de lectura por separado. Permite cancelar y reintentar; salir cancela la lectura. En navegador se indica la indisponibilidad de NFC; el Benchy sigue animándose como decoración. Escanear no ofrece alta manual: esta se inicia mediante un botón de bobina neutra con + a la derecha del título de Mis bobinas e Inventario, igual que el alta de filamentos del catálogo. Se mantiene el alta desde un perfil de catálogo y desde una etiqueta desconocida.
 - **NAV-07.** Buscar y filtrar inventario por marca, material, color y ubicación. Las unidades retiradas quedan fuera de las vistas activas.
 - **NAV-08.** Navegación fija inferior en este orden: Mis bobinas, Inventario, Escanear, Catálogo, Configuración. Escanear es el botón central más grande, con forma de octógono de esquinas redondeadas e icono NFC minimalista sin texto visible. Los cuatro botones laterales son cuadrados; los adyacentes se ajustan al contorno del octógono.
 - **NAV-09.** La barra inferior ocupa todo el ancho de la pantalla, sin marco ni contenedor exterior redondeado y sin márgenes laterales. Mantener el área segura inferior del dispositivo.
@@ -52,7 +52,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 
 - **UI-05.** Catálogo no muestra los contadores. El botón octogonal combina bobina SVG neutra y símbolo NFC con fondo transparente, superpuesto en su esquina inferior izquierda, y centraliza escaneo y alta manual. La pantalla de escaneo usa el lector nativo en Android e indica su indisponibilidad en navegador; nunca simular una lectura en la app.
 
-- **UI-15.** Escanear rellena el espacio libre bajo el lector con estantes decorativos de bobinas SVG, usando perfiles aleatorios del catálogo y repitiéndolos si hace falta. Las bobinas quedan juntas y ligeramente solapadas, como libros, sin huecos entre ellas. Cada bobina de la derecha queda por detrás de su vecina izquierda. Adaptar filas y columnas al espacio disponible sin cubrir controles ni navegación; no representa cantidades reales. Sin perfiles no se inventan filamentos.
+- **UI-15.** Variante actual: Escanear muestra un Benchy en perspectiva de tres cuartos, con volúmenes blancos y grises y sin contorno, inspirado en la referencia visual aportada (estilo Sin contorno), en SVG ligero, con balanceo y ondas en bucle. Sustituye al símbolo de lectura y a la estantería para reducir elementos dibujados. La flotación combina elevación y balanceo leves con ciclos diferentes; con NFC apagado o no disponible en Android, el barco aparece inclinado y quieto sobre un banco de arena. Consulta del estado al entrar y al volver a la app. Control temporal eliminado de la entrega 0.2.0; el estado depende únicamente del NFC real; respetar movimiento reducido. La versión con estantería queda guardada en Git (315176e).
 
 - **CFG-01.** Configuración muestra estado real NFC (activado, desactivado, no compatible o error de consulta) y versión. En web indica que NFC no está disponible y muestra la versión del paquete como desarrollo; Android obtiene versión y compilación de la app instalada. Actualizar el estado al volver a la app y mediante botón; no iniciar lecturas al consultar.
 
@@ -247,6 +247,9 @@ El paso 1 está completado. El usuario ha solicitado avanzar con el recorrido ma
 
 | Fecha | Cambio |
 | --- | --- |
+| 2026-11-17 | Autorizada APK 0.2.0 (código 3), sin controles temporales, con documentación de continuidad desde casa. |
+| 2026-11-17 | Benchy con volumen y perspectiva según referencia del usuario, en blancos y grises sin contorno. |
+| 2026-11-17 | Versión de estantería guardada en 315176e; nueva variante ligera de escaneo con Benchy animado. |
 | 2026-11-17 | Estantería decorativa adaptable con bobinas aleatorias del catálogo en el espacio libre de Escanear. |
 | 2026-11-17 | Configuración incorpora estado NFC y versión de app; integración nativa pendiente de próxima APK autorizada. |
 | 2026-11-17 | El alta de bobinas reutiliza el botón SVG de circuito NFC con + para registrar etiquetas. |
