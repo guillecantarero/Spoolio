@@ -10,3 +10,5 @@
 - Distinguir pruebas ejecutadas de pruebas pendientes, especialmente las que requieren Android y un teléfono NFC físico.
 - No incluir secretos ni claves privilegiadas en el repositorio o el cliente.
 - No ampliar el alcance a funcionalidades futuras sin que el usuario lo solicite.
+
+- Trabajar en la versión PC/web. No generar, actualizar ni sincronizar otra APK hasta que el usuario lo solicite explícitamente; agrupar primero los cambios de interfaz.

@@ -1,0 +1,5 @@
+import { defineConfig } from 'vite';
+export default defineConfig({
+  server: { watch: { ignored: ['**/.android-tools/**', '**/android/**', '**/artifacts/**'] } },
+  optimizeDeps: { entries: ['index.html'] },
+});

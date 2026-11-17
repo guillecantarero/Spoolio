@@ -1,8 +1,8 @@
 # Spoolio — Requisitos y decisiones
 
-Estado: primera implementación local de demostración; backend y NFC pendientes.
+Estado: demostración local con versión Android y lector NFC nativo; backend y validación física pendientes.
 
-Última actualización: 16 de noviembre de 2026.
+Última actualización: 17 de noviembre de 2026.
 
 Este documento recoge las decisiones del usuario y los requisitos del documento inicial que siguen vigentes. Las aclaraciones posteriores prevalecen sobre el texto inicial. Se actualizará conforme se acuerden nuevos requisitos; las cuestiones pendientes no son decisiones cerradas.
 
@@ -25,7 +25,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **UBI-01.** Las bobinas **no tienen propietario ni responsable** en el modelo de la aplicación: tienen una **ubicación actual**.
 - **UBI-02.** Ubicaciones iniciales: con el usuario promotor, con Juan, con Óscar y en Fablab.
 - **UBI-03.** Fablab es una ubicación compartida, no una cuenta que deba iniciar sesión.
-- **UBI-04.** Las ubicaciones correspondientes a personas se vinculan a sus cuentas para poder mostrar «Mis bobinas» y registrar «La tengo yo».
+- **UBI-04.** Las ubicaciones correspondientes a personas se vinculan a sus cuentas para poder mostrar «Mis bobinas» y ofrecerlas en el selector de ubicación.
 - **UBI-05.** El usuario que registra un movimiento es un dato distinto de la ubicación de origen o destino.
 
 ## 3. Navegación
@@ -38,7 +38,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 | NAV-04 | Catálogo | Consultar, añadir y modificar perfiles de filamento, tengan o no unidades en inventario. Mostrar si la muestra está hecha. |
 | NAV-05 | Configuración | Datos de la cuenta y ajustes. El detalle de preferencias se concretará después. |
 
-- **NAV-06.** Alta de unidades centralizada en el botón octogonal: abre una pantalla con «Escanear» grande y «Añadir manualmente» secundario. Se elimina el botón de alta de Inventario y Mis bobinas, incluidos sus estados vacíos. La entrada desde un perfil de catálogo se mantiene.
+- **NAV-06.** El botón octogonal inicia directamente la lectura NFC y muestra el mismo símbolo NFC de ondas, animado durante la búsqueda. Permite cancelar y reintentar; salir cancela la lectura. En navegador el símbolo permanece estático e indica la indisponibilidad de NFC. Escanear no ofrece alta manual: esta se inicia mediante un botón de bobina neutra con + a la derecha del título de Mis bobinas e Inventario, igual que el alta de filamentos del catálogo. Se mantiene el alta desde un perfil de catálogo y desde una etiqueta desconocida.
 - **NAV-07.** Buscar y filtrar inventario por marca, material, color y ubicación. Las unidades retiradas quedan fuera de las vistas activas.
 - **NAV-08.** Navegación fija inferior en este orden: Mis bobinas, Inventario, Escanear, Catálogo, Configuración. Escanear es el botón central más grande, con forma de octógono de esquinas redondeadas e icono NFC minimalista sin texto visible. Los cuatro botones laterales son cuadrados; los adyacentes se ajustan al contorno del octógono.
 - **NAV-09.** La barra inferior ocupa todo el ancho de la pantalla, sin marco ni contenedor exterior redondeado y sin márgenes laterales. Mantener el área segura inferior del dispositivo.
@@ -50,7 +50,28 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 
 - **UI-04.** Cambiar perfil solo en Configuración. Solo en Inventario y Mis bobinas, el orden es título, contadores y buscador; los contadores se sitúan debajo del título y reducen su altura aproximadamente un 10 %. Son exactamente dos columnas: primero las unidades activas con el usuario conectado y después el total de unidades activas del inventario, independientemente de la sección o filtros.
 
-- **UI-05.** Catálogo no muestra los contadores. El botón octogonal combina bobina SVG neutra y símbolo NFC con fondo transparente, superpuesto en su esquina inferior izquierda (también en el botón grande de escaneo), y centraliza escaneo y alta manual. La pantalla de escaneo debe identificar la indisponibilidad real del NFC mientras no exista integración Android; nunca simular una lectura.
+- **UI-05.** Catálogo no muestra los contadores. El botón octogonal combina bobina SVG neutra y símbolo NFC con fondo transparente, superpuesto en su esquina inferior izquierda, y centraliza escaneo y alta manual. La pantalla de escaneo usa el lector nativo en Android e indica su indisponibilidad en navegador; nunca simular una lectura en la app.
+
+- **UI-15.** Escanear rellena el espacio libre bajo el lector con estantes decorativos de bobinas SVG, usando perfiles aleatorios del catálogo y repitiéndolos si hace falta. Las bobinas quedan juntas y ligeramente solapadas, como libros, sin huecos entre ellas. Cada bobina de la derecha queda por detrás de su vecina izquierda. Adaptar filas y columnas al espacio disponible sin cubrir controles ni navegación; no representa cantidades reales. Sin perfiles no se inventan filamentos.
+
+- **CFG-01.** Configuración muestra estado real NFC (activado, desactivado, no compatible o error de consulta) y versión. En web indica que NFC no está disponible y muestra la versión del paquete como desarrollo; Android obtiene versión y compilación de la app instalada. Actualizar el estado al volver a la app y mediante botón; no iniciar lecturas al consultar.
+
+- **UI-14.** Las tarjetas del catálogo muestran siempre la variante debajo del nombre (Basic, Matte, Silk, etc.) y añaden Translúcido cuando corresponde. Si no se ha definido variante ni translucidez, muestran «Sin variante»; no inferir una familia del material.
+
+- **UI-13.** El formulario del catálogo ofrece botones con hélice para Sólido y Gradiente (excluyentes) y un botón independiente Translúcido (activable/desactivable con cualquiera). La selección queda resaltada y los SVG muestran cada efecto. Al guardar sólido se conserva solo el primer color; al alternar antes de guardar se mantienen los colores en el formulario. Los perfiles antiguos multicolor se presentan como gradiente y conservan su valor si no se cambia la distribución explícitamente.
+
+- **UI-12.** Las acciones de cada tarjeta del catálogo muestran hélice neutra con lápiz para editar y bobina neutra con + para añadir unidad, sin texto visible y con nombres accesibles. Las tarjetas del catálogo mantienen la misma altura, con hélice arriba y botones alineados abajo; Muestra y su indicador quedan también anclados abajo, justo encima de la línea divisoria. El espacio sobrante queda entre el texto del perfil y este bloque inferior.
+
+- **UI-11.** En la ficha y en el formulario de alta de bobina, añadir etiqueta NFC se representa con un circuito NFC circular SVG minimalista con dos trazos de antena, chip pequeño sin conexiones y símbolo +, con fondo transparente y nombre accesible «Añadir etiqueta NFC» en la ficha; en el alta indica leer primera, segunda u otra etiqueta según las ya registradas.
+
+- **UI-10.** Los símbolos de los botones tienen fondo transparente, incluidos los superpuestos de lápiz, papelera y añadir. Conservar los SVG y el fondo propio del botón.
+
+- **UI-09.** El editor de bobinas permite buscar y seleccionar perfiles por ambos idiomas, marca y material; cambiar el perfil registra la edición. El selector es una lista siempre visible con la hélice del catálogo, nombre, marca y material, con altura para tres filas y desplazamiento vertical; el buscador filtra la lista y seleccionar no la cierra. La vista previa no muestra texto opaco/translúcido. La ubicación se omite al editar y se cambia desde la ficha; se conserva en el alta. Formato mediante botón SVG neutro que muestra el formato contrario al actual (el destino al pulsarlo) y alterna carrete/refill; la vista previa conserva el formato actual. Cantidad mediante deslizador de cuatro posiciones con puntos y los niveles aproximados acordados. El deslizador y su punto activo usan la misma escala del inventario: 100 verde, 75 verde amarillento, 50 ámbar y 25 rojo.
+- **TEC-09.** Agrupar cambios en PC/web y generar una APK solo cuando el usuario lo solicite explícitamente.
+
+- **UI-08.** En la ficha, editar se representa con bobina neutra y lápiz; retirar con carrete vacío y papelera, sin textos visibles pero con etiquetas accesibles. Retirar conserva la confirmación. El botón de ubicación usa bobina y nombre actual, y permite elegir otra ubicación.
+
+- **UI-07.** El botón de añadir filamento de la cabecera del catálogo muestra la hélice neutra con un símbolo + superpuesto, sin texto visible, conservando el nombre accesible «Añadir filamento». Se sitúa en la misma fila del título, alineado al margen derecho también en móvil.
 
 - **UI-06.** El título de cada pestaña usa su color de acento. Los números y textos de los contadores usan azul para «Contigo» y verde para «Total en inventario», independientemente de la pestaña. Mantener contraste legible en ambos temas.
 
@@ -73,6 +94,8 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **VIS-06.** En translúcidos se dibuja el damero del SVG bajo rellenos de color sin solapamiento con opacidad 0,65. Es una constante visual, no editable. El recorte excluye exterior y agujero; nunca reducir la opacidad global ni la de los laterales.
 - **VIS-07.** Componente React SVG inline compartido entre inventario, detalle y formularios, con IDs únicos por instancia, respaldo neutro para colores inválidos, previsualización inmediata y nombres accesibles cuando el icono no sea decorativo.
 - **VIS-08.** «Filamento translúcido» se edita en el catálogo. Mostrar indicación textual en ficha, catálogo y formularios; en las tarjetas compactas se incluye en la descripción accesible sin ampliar los tres datos visibles solicitados.
+- **VIS-11.** Las tarjetas del catálogo usan la muestra helicoidal aportada en `docs/referencias/helice-limpia.svg`, coloreada con los colores ordenados del perfil y damero para translúcidos. Inventario y Mis bobinas mantienen el SVG de bobina. La hélice representa el perfil, independientemente de si la muestra está hecha.
+
 - **VIS-09.** Añadir ejemplos locales temporales de las ocho combinaciones y colores blanco/negro, inspirados en familias Bambu Lab. Identificarlos internamente y permitir limpiarlos desde Configuración sin borrar unidades creadas por el usuario. Las combinaciones ficticias deben indicarse como tales.
 
 - **CAT-01.** Un perfil del catálogo describe un tipo de filamento, no una unidad física.
@@ -81,7 +104,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **CAT-04.** Toda unidad del inventario debe estar asociada a **exactamente un perfil** del catálogo. No se admiten unidades sin perfil.
 - **CAT-05.** Al registrar una unidad se selecciona un perfil existente o se crea uno nuevo. Los perfiles se reutilizan en compras posteriores.
 - **CAT-06.** Se pueden crear perfiles de cualquier marca, por ejemplo Winle.
-- **CAT-07.** Cada perfil tiene un indicador compartido **«Muestra hecha / No hecha»**. No se necesita registrar quién tiene la muestra ni dónde está. La representación visual se diseñará más adelante.
+- **CAT-07.** Cada perfil tiene un indicador compartido **«Muestra hecha / No hecha»**. No se necesita registrar quién tiene la muestra ni dónde está. En las tarjetas se muestra solo un indicador no interactivo: palabra «Muestra» seguida de círculo con marca verde si está hecha, círculo con guion neutro si está pendiente. Se modifica desde el formulario de edición de filamento.
 - **CAT-08.** Agotar o retirar una unidad no elimina su perfil ni cambia el indicador de muestra.
 - **CAT-09.** No eliminar perfiles con unidades asociadas, incluidas las retiradas, para preservar la integridad del historial.
 - **CAT-10.** Se quiere valorar un catálogo inicial con datos de Bambu Lab. La fuente, importación y actualización todavía no están acordadas; no asumir que existen datos disponibles o ya verificados.
@@ -89,7 +112,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 ### Colores
 
 - **COL-01.** Cada perfil tiene **uno o varios colores**, sin un límite fijo de negocio.
-- **COL-02.** Cada color guarda código hexadecimal `#RRGGBB`, orden y nombre opcional.
+- **COL-02.** Cada color guarda código hexadecimal `#RRGGBB`, orden y nombre opcional heredado. El editor no solicita nombres de componentes: solo códigos hexadecimales. Sólido permite un código; gradiente permite añadir varios. Subir y eliminar colores se representan mediante iconos SVG transparentes. La flecha de subir solo aparece en gradiente.
 - **COL-03.** El nombre comercial del color del perfil es independiente del nombre opcional de cada componente.
 - **COL-04.** Tipos de distribución: **unicolor**, **gradiente** y **multicolor simultáneo**.
 - **COL-05.** Guardar el orden para representar en el futuro un color sólido, un degradado o segmentos. La representación es orientativa, no una predicción exacta del resultado impreso.
@@ -128,7 +151,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **HIS-02.** Cada transferencia registra unidad, ubicación de origen, ubicación de destino, fecha del servidor y usuario que realizó la acción.
 - **HIS-03.** Actualizar ubicación y crear el evento en una única transacción.
 - **HIS-04.** Gestionar modificaciones simultáneas para evitar cambios perdidos e historiales incoherentes.
-- **HIS-05.** «La tengo yo» mueve la unidad a la ubicación del usuario conectado. Si ya está allí, no genera un movimiento duplicado.
+- **HIS-05.** El botón de ubicación muestra una bobina con el nombre de la ubicación actual y abre un selector de todas las personas y Fablab. Al guardar se registra el traslado; seleccionar la ubicación actual no genera movimiento. Sustituye al botón «La tengo yo».
 - **HIS-06.** Permitir cambios manuales de ubicación desde la ficha.
 - **HIS-07.** Registrar alta y retirada. La retirada y su evento se guardan de manera atómica.
 - **HIS-08.** Conservar el historial después de retirar la unidad. La pantalla de consulta de historial y las estadísticas pueden incorporarse más adelante.
@@ -171,7 +194,7 @@ Las relaciones entre entidades deben pertenecer al mismo inventario. Aplicar est
 
 ## 9. Tecnología, entregables y validación
 
-- **TEC-01.** Propuesta inicial, pendiente de verificación: React, TypeScript, Vite y Capacitor con NFC nativo. Verificar compatibilidad y mantenimiento antes de elegir dependencias.
+- **TEC-01.** React, TypeScript y Vite con Capacitor 8 para Android. Complemento local SpoolioNfc limitado a UID mediante Reader Mode de Android, sin leer memoria ni escribir.
 - **TEC-02.** Mantener migraciones SQL versionadas, políticas RLS y funciones transaccionales necesarias.
 - **TEC-03.** Proporcionar variables de entorno de ejemplo sin secretos e instrucciones de configuración, ejecución y compilación Android.
 - **TEC-04.** Separar datos ficticios de demostración de datos reales.
@@ -224,6 +247,27 @@ El paso 1 está completado. El usuario ha solicitado avanzar con el recorrido ma
 
 | Fecha | Cambio |
 | --- | --- |
+| 2026-11-17 | Estantería decorativa adaptable con bobinas aleatorias del catálogo en el espacio libre de Escanear. |
+| 2026-11-17 | Configuración incorpora estado NFC y versión de app; integración nativa pendiente de próxima APK autorizada. |
+| 2026-11-17 | El alta de bobinas reutiliza el botón SVG de circuito NFC con + para registrar etiquetas. |
+| 2026-11-17 | Alta manual trasladada de Escanear a las cabeceras de Mis bobinas e Inventario, con bobina neutra y +. |
+| 2026-11-17 | Alta del catálogo a la derecha del título y bloque Muestra anclado al pie de las tarjetas junto a las acciones. |
+| 2026-11-17 | Añadir unidad desde catálogo usa bobina neutra con +; editar perfil conserva la hélice con lápiz. |
+| 2026-11-17 | Flecha de colores solo en gradiente; etiqueta Muestra delante del indicador y línea de variante en todas las tarjetas del catálogo. |
+| 2026-11-17 | Códigos de color sin nombres de componentes; uno en sólido, varios en gradiente; acciones de subir y eliminar mediante SVG. |
+| 2026-11-17 | Botones SVG para sólido/gradiente y translucidez independiente en el editor del catálogo. |
+| 2026-11-17 | Tarjetas del catálogo de altura uniforme, hélices y botones alineados y espacio flexible antes de la división de acciones. |
+| 2026-11-17 | Acciones del catálogo con hélice y lápiz/+; muestra como indicador visual que se cambia desde el editor. |
+| 2026-11-17 | Escaneo directo desde el botón central, símbolo NFC con ondas animadas durante lectura y alta manual debajo; cancelación al salir o abrir el formulario. |
+| 2026-11-17 | Añadir etiqueta NFC mediante icono SVG de circuito circular con antena, chip y símbolo +. |
+| 2026-11-17 | Símbolos de botones con fondo transparente, sin recuadros detrás de las superposiciones. |
+| 2026-11-17 | Selector de filamentos del editor como lista visual de tres filas con hélice, desplazamiento y búsqueda. |
+| 2026-11-17 | El botón de formato muestra el destino contrario al actual y el deslizador comparte la escala de colores del inventario. |
+| 2026-11-17 | Editor visual con búsqueda de catálogo, formato SVG y deslizador de cantidad. Se pausa la generación de APK hasta nueva petición explícita. |
+| 2026-11-17 | El usuario confirma que NFC funciona en el Pixel. Acciones de ficha con SVG y selector de ubicación en lugar de «La tengo yo». |
+| 2026-11-17 | Se autoriza una APK Android para probar alta y consulta por NFC en Pixel sin USB. Persistencia local, dos etiquetas opcionales, vinculación a unidades existentes y protección de UID duplicados, incluidas retiradas. |
+| 2026-11-17 | Botón de alta del catálogo con hélice y símbolo + en lugar de texto. |
+| 2026-11-17 | El catálogo usa el SVG helicoidal aportado, con colores y translucidez del perfil. |
 | 2026-11-16 | SVG aprobado para bobinas y refills, translucidez, vistas cuadrícula/lista y lote visual temporal con limpieza segura. |
 | 2026-11-16 | Se eliminan lemas y subtítulos decorativos, se reducen radios y se ajustan acentos a la referencia visual. |
 | 2026-11-16 | Base neutra, acentos distintos por sección y botón de escaneo con contraste inverso al tema. |

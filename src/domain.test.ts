@@ -63,3 +63,17 @@ describe('Persistencia local de demostración', () => {
     expect(write).not.toHaveBeenCalled();
   });
 });
+
+
+describe('Corrección del perfil de una bobina', () => {
+  it('cambia el perfil con historial y conserva sus etiquetas y ubicación', () => {
+    const before = applyCommand(demoState(), { type: 'createSpool', filamentId: 'demo-forest', locationId: 'fablab', mounted: true, amount: '≤100 %', nfcUids: ['04AB0021'] }, 'me');
+    const spool = before.spools[0];
+    const command = { type: 'updateSpool' as const, id: spool.id, version: spool.version, filamentId: 'demo-sunset', locationId: spool.locationId, mounted: false, amount: '<50 %' as const };
+    const after = applyCommand(before, command, 'me');
+    expect(after.spools[0]).toMatchObject({ filamentId: 'demo-sunset', locationId: 'fablab', nfcUids: ['04AB0021'], mounted: false, amount: '<50 %' });
+    expect(after.events.some(e => e.detail === 'Filamento: Bosque → Atardecer')).toBe(true);
+    expect(() => applyCommand(before, { ...command, filamentId: 'missing' }, 'me')).toThrow('catálogo');
+    expect(before.spools[0].filamentId).toBe('demo-forest');
+  });
+});

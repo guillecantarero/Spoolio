@@ -6,7 +6,7 @@ export type Color = { hex: string; name: string };
 export type Filament = { id: string; brand: string; material: string; variant: string; name: string; nameEn?: string; distribution: Distribution; colors: Color[]; sample: boolean; translucent: boolean; demoSet?: string };
 export type Person = { id: string; name: string };
 export type Place = { id: string; name: string; userId?: string };
-export type Spool = { id: string; filamentId: string; locationId: string; mounted: boolean; amount: Amount; version: number; createdAt: string; retiredAt?: string; retiredBy?: string; reason?: string; demoSet?: string };
+export type Spool = { nfcUids?: string[]; id: string; filamentId: string; locationId: string; mounted: boolean; amount: Amount; version: number; createdAt: string; retiredAt?: string; retiredBy?: string; reason?: string; demoSet?: string };
 export type Event = { id: string; spoolId: string; actorId: string; at: string; type: 'alta' | 'traslado' | 'edición' | 'retirada'; from?: string; to?: string; detail?: string };
 export type State = { schema: 1; visualDemoInitialized?: boolean; visualDemoAmountsV1?: boolean; users: Person[]; places: Place[]; filaments: Filament[]; spools: Spool[]; events: Event[] };
 export type Command =
@@ -14,8 +14,9 @@ export type Command =
   | { type: 'removeVisualDemo' }
   | { type: 'saveFilament'; filament: Filament }
   | { type: 'deleteFilament'; id: string }
-  | { type: 'createSpool'; filamentId: string; locationId: string; mounted: boolean; amount: Amount }
-  | { type: 'updateSpool'; id: string; version: number; locationId: string; mounted: boolean; amount: Amount }
+  | { type: 'linkNfc'; id: string; version: number; uid: string }
+  | { type: 'createSpool'; nfcUids?: string[]; filamentId: string; locationId: string; mounted: boolean; amount: Amount }
+  | { type: 'updateSpool'; filamentId?: string; id: string; version: number; locationId: string; mounted: boolean; amount: Amount }
   | { type: 'retire'; id: string; version: number; reason: 'agotada' | 'retirada manual' }
   | { type: 'rename'; name: string };
 
@@ -24,6 +25,16 @@ export function emptyState(): State {
 }
 
 function requireValue(condition: unknown, message: string): asserts condition { if (!condition) throw new Error(message); }
+
+export function normalizeUid(raw: string): string {
+  const uid = raw.replace(/[:\s-]/g, '').toUpperCase();
+  requireValue(/^(?:[0-9A-F]{2})+$/.test(uid) && uid.length <= 64, 'UID NFC inválido.');
+  return uid;
+}
+export function findSpoolByUid(state: State, raw: string): Spool | undefined {
+  const uid = normalizeUid(raw);
+  return state.spools.find(s => (s.nfcUids ?? []).includes(uid));
+}
 
 // Pure domain operations. Production will enforce these rules server-side too.
 export function applyCommand(state: State, command: Command, actorId: string, now = new Date().toISOString(), id = () => crypto.randomUUID()): State {
@@ -67,23 +78,36 @@ export function applyCommand(state: State, command: Command, actorId: string, no
   } else if (command.type === 'createSpool') {
     requireValue(next.filaments.some(f => f.id === command.filamentId), 'Selecciona un filamento del catálogo.');
     location(command.locationId); amount(command.amount);
+    const nfcUids = (command.nfcUids ?? []).map(normalizeUid);
+    requireValue(new Set(nfcUids).size === nfcUids.length, 'Has leído la misma etiqueta dos veces.');
+    requireValue(nfcUids.every(uid => !findSpoolByUid(next, uid)), 'Esta etiqueta ya está asociada a otra bobina, activa o retirada.');
     const spoolId = id();
-    next.spools.push({ id: spoolId, filamentId: command.filamentId, locationId: command.locationId, mounted: command.mounted, amount: command.amount, version: 1, createdAt: now });
+    next.spools.push({ nfcUids, id: spoolId, filamentId: command.filamentId, locationId: command.locationId, mounted: command.mounted, amount: command.amount, version: 1, createdAt: now });
     event(spoolId, 'alta', { to: command.locationId });
   } else {
     const spool = next.spools.find(s => s.id === command.id);
     requireValue(spool, 'No se encuentra la bobina.');
     requireValue(!spool.retiredAt, 'Esta bobina ya está retirada.');
     requireValue(spool.version === command.version, 'La bobina ha cambiado en otra ventana. Cierra la ficha y vuelve a abrirla.');
-    if (command.type === 'retire') {
+    if (command.type === 'linkNfc') {
+      const uid = normalizeUid(command.uid);
+      requireValue(!findSpoolByUid(next, uid), 'Esta etiqueta ya está asociada a una bobina, activa o retirada.');
+      spool.nfcUids = [...(spool.nfcUids ?? []), uid]; spool.version++;
+      event(spool.id, 'edición', { detail: `Etiqueta NFC asociada: ${uid}` });
+    } else if (command.type === 'retire') {
       requireValue(['agotada', 'retirada manual'].includes(command.reason), 'Motivo de retirada inválido.');
       spool.retiredAt = now; spool.retiredBy = actorId; spool.reason = command.reason; spool.version++;
       event(spool.id, 'retirada', { from: spool.locationId, detail: command.reason });
     } else {
       location(command.locationId); amount(command.amount);
+      const filamentId = command.filamentId ?? spool.filamentId;
+      requireValue(next.filaments.some(f => f.id === filamentId), 'Selecciona un filamento del catálogo.');
+      const profileChanged = spool.filamentId !== filamentId;
       const moved = spool.locationId !== command.locationId;
       const edited = spool.mounted !== command.mounted || spool.amount !== command.amount;
-      if (!moved && !edited) return state;
+      if (!moved && !edited && !profileChanged) return state;
+      if (profileChanged) event(spool.id, 'edición', { detail: `Filamento: ${next.filaments.find(f => f.id === spool.filamentId)?.name} → ${next.filaments.find(f => f.id === filamentId)!.name}` });
+      spool.filamentId = filamentId;
       if (moved) event(spool.id, 'traslado', { from: spool.locationId, to: command.locationId });
       if (edited) event(spool.id, 'edición', { detail: `${spool.mounted ? 'Montada' : 'Refill'} · ${spool.amount} → ${command.mounted ? 'Montada' : 'Refill'} · ${command.amount}` });
       spool.locationId = command.locationId; spool.mounted = command.mounted; spool.amount = command.amount; spool.version++;

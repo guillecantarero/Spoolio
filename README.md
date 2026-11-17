@@ -4,13 +4,13 @@ Aplicación Android privada para gestionar el inventario compartido de filamento
 
 ## Estado
 
-Primera versión funcional de demostración local. Incluye las cinco secciones, catálogo multicolor, muestras, altas manuales, filtros, cambios de ubicación y retirada con historial. La sección Escanear informa de que la lectura NFC aún está pendiente.
+Primera versión funcional de demostración local. Incluye las cinco secciones, catálogo multicolor, muestras, altas manuales, filtros, cambios de ubicación y retirada con historial. Incluye una versión Android de prueba con lectura nativa del UID NFC para crear, asociar y consultar bobinas. Véase [Prueba Android y NFC](docs/ANDROID_NFC.md).
 
 **No hay autenticación real ni sincronización entre dispositivos.** Se selecciona un perfil de prueba (Mi perfil, Juan u Óscar). Fablab es una ubicación. Los datos se guardan en este navegador y origen mediante `localStorage`, en la clave separada `spoolio.demo.v1`. Las fechas son del dispositivo.
 
 ## Ejecutar
 
-Con Node.js compatible con Vite (20.19+ o 22.12+; en esta máquina se ha usado Node 25.8.0):
+Con Node.js 22 o superior (requerido por Capacitor 8):
 
 ```powershell
 cd Spoolio
@@ -18,7 +18,7 @@ npm ci
 npm run dev
 ```
 
-Abrir la dirección local mostrada por Vite, normalmente `http://127.0.0.1:5173`. Mantener esa terminal abierta. Usar siempre el mismo origen: `localhost` y `127.0.0.1` tienen almacenamientos separados. Esta vista permite desarrollar la interfaz de la futura app Android; todavía no se genera una APK.
+Abrir la dirección local mostrada por Vite, normalmente `http://127.0.0.1:5173`. Mantener esa terminal abierta. Usar siempre el mismo origen: `localhost` y `127.0.0.1` tienen almacenamientos separados. Esta vista permite desarrollar la interfaz de la futura app Android; la lectura NFC requiere instalar la APK Android.
 
 ```powershell
 npm run build
@@ -33,7 +33,7 @@ Las pruebas de interfaz usan Microsoft Edge instalado en Windows, y levantan el 
 1. Elegir «Mi perfil» en la pantalla de demostración.
 2. Pulsar el botón octogonal central → «Añadir manualmente» → «Crear un filamento nuevo». Guardar marca, material, nombre comercial, tipo y colores. El formulario vuelve al alta de unidad.
 3. Elegir ubicación, montada/refill y cantidad aproximada. Guardar sin NFC.
-4. Cambiar a Juan desde Configuración → «Cambiar perfil». Abrir la unidad y pulsar «La tengo yo». Verificar Mis bobinas y el historial.
+4. Cambiar a Juan desde Configuración → «Cambiar perfil». Abrir la unidad, pulsar la bobina con el nombre de la ubicación y seleccionar Juan. Verificar Mis bobinas y el historial.
 5. Editar la unidad para moverla a Fablab o cambiar formato/cantidad.
 6. Retirarla como agotada. Ya no aparece en las vistas activas. El catálogo y la muestra se mantienen; el historial se consulta en Configuración → Unidades retiradas.
 7. Recargar y comprobar que los datos persisten. En Configuración se puede exportar una copia JSON.
@@ -54,7 +54,7 @@ El guardado requiere un navegador con Web Locks en un origen seguro como localho
 
 La demo no constituye una barrera de seguridad: todos los perfiles locales son seleccionables. Los permisos reales, RLS, fecha de servidor, validación de operaciones y autenticación se implementarán en el backend. La validación local no los sustituye. Las ediciones de catálogo entre pestañas no tienen todavía control de versión; el control de conflictos se aplica a unidades y movimientos.
 
-Pendientes: conexión Supabase/servidor, migraciones SQL, cuentas reales, empaquetado Android con Capacitor, lectura NFC nativa y pruebas físicas en el Pixel. No se ha instalado ni elegido un complemento NFC todavía.
+Pendientes: conexión Supabase/servidor, migraciones SQL, cuentas reales y validación física de NFC en el Pixel. Android usa Capacitor 8 y un complemento local limitado a leer UID; no escribe ni descifra etiquetas.
 
 Las herramientas se eligieron consultando la [guía oficial de Vite](https://vite.dev/guide/) y la [integración de Capacitor](https://capacitorjs.com/docs/getting-started). El lockfile fija las versiones instaladas para reproducir esta etapa.
 

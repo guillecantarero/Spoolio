@@ -2,6 +2,7 @@ import { useId } from 'react';
 
 type Props = {
   colores?: readonly string[];
+  vacia?: boolean;
   montadaEnCarrete?: boolean;
   translucido?: boolean;
   size?: number | string;
@@ -11,7 +12,7 @@ type Props = {
 };
 
 /** Geometry from the user-approved bobina-minimalista-v2.svg. */
-export function BobinaIcono({ colores, montadaEnCarrete = true, translucido = false, size = 160, className = '', decorative = false, label }: Props) {
+export function BobinaIcono({ colores, vacia = false, montadaEnCarrete = true, translucido = false, size = 160, className = '', decorative = false, label }: Props) {
   const uid = useId().replace(/:/g, '');
   const ids = { gradient: `${uid}-color`, outerGradient: `${uid}-outer-color`, curvedPaint: `${uid}-curved-paint`, checker: `${uid}-checker`, clip: `${uid}-clip`, title: `${uid}-title` };
   const valid = colores?.length ? colores.map(c => /^#[0-9a-f]{6}$/i.test(c) ? c : '#92979E') : ['#92979E'];
@@ -39,7 +40,7 @@ export function BobinaIcono({ colores, montadaEnCarrete = true, translucido = fa
       <clipPath id={ids.clip}><path d="M90 40 H146 A39 71 0 0 1 146 182 H90 A39 71 0 0 1 90 40 Z M90 91 A11 20 0 1 1 90 131 A11 20 0 1 1 90 91 Z" clipRule="evenodd"/></clipPath>
     </defs>
     {montadaEnCarrete && <g data-part="lateral-trasero" fill="var(--spool-back, #D9D5CA)" stroke="var(--spool-outline, #A39E92)" strokeWidth="2"><ellipse cx="146" cy="111" rx="49" ry="86"/></g>}
-    <g data-part="filamento">
+    {vacia ? <g data-part="carrete-vacio"><path d="M90 98 H146 A8 13 0 0 1 146 124 H90 Z" fill="var(--spool-back, #D9D5CA)" stroke="var(--spool-outline, #A39E92)" strokeWidth="2"/></g> : <g data-part="filamento">
       <g clipPath={`url(#${ids.clip})`}>
         {translucido && <rect data-part="damero" x="50" y="39" width="136" height="144" fill={`url(#${ids.checker})`}/>}
         {valid.length === 1 ? <rect data-part="color" x="50" y="39" width="136" height="144" fill={valid[0]} fillOpacity={translucido ? .65 : 1}/> : <>
@@ -51,7 +52,7 @@ export function BobinaIcono({ colores, montadaEnCarrete = true, translucido = fa
         <g fill="none" stroke="#FFF" strokeWidth="1.2" opacity=".18">{[104, 116, 128, 140].map(x => <path key={x} d={`M${x} 42 A39 71 0 0 1 ${x} 180`}/>)}</g>
       </g>
       <ellipse data-part="agujero" cx="90" cy="111" rx="11" ry="20" fill="#39414B"/>
-    </g>
+    </g>}
     {montadaEnCarrete && <g data-part="lateral-delantero" stroke="var(--spool-outline, #A39E92)" strokeWidth="2"><path d="M90 25 A49 86 0 1 1 90 197 A49 86 0 1 1 90 25 Z M90 91 A11 20 0 1 0 90 131 A11 20 0 1 0 90 91 Z" fill="var(--spool-front, #E4E0D5)" fillRule="evenodd"/><ellipse cx="90" cy="111" rx="38" ry="69" fill="none" stroke="var(--spool-inner, #C2BDB0)"/></g>}
   </svg>;
 }

@@ -11,3 +11,8 @@ test-results/
 *.log
 .DS_Store
 Thumbs.db
+
+.android-tools/
+artifacts/
+*.keystore
+*.jks

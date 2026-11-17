@@ -1,0 +1,24 @@
+import { test, expect } from '@playwright/test';
+test('editor busca perfiles y guarda formato y cantidad sin cambiar ubicación', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Entrar como Mi perfil' }).click();
+  await page.locator('.spool-card').first().click();
+  const location = await page.locator('.facts strong').first().textContent();
+  await page.getByRole('button', { name: 'Editar bobina', exact: true }).click();
+  await expect(page.getByRole('combobox', { name: 'Ubicación', exact: true })).toHaveCount(0);
+  await expect(page.locator('dialog .filament-preview')).not.toContainText('Opaco');
+  await expect(page.locator('dialog .filament-preview')).not.toContainText('Translúcido');
+  await page.getByRole('searchbox', { name: 'Buscar filamento' }).fill('orange');
+  await expect(page.locator('.filament-options button')).not.toHaveCount(0);
+  await page.locator('.filament-options button').first().click();
+  const toggle = page.getByRole('button', { name: 'Montada en carrete', exact: true });
+  if (await toggle.getAttribute('aria-pressed') === 'true') await toggle.click();
+  await page.getByRole('slider', { name: 'Cantidad aproximada' }).fill('1');
+  await expect(page.getByRole('slider')).toHaveAttribute('aria-valuetext', '<50 %');
+  await page.screenshot({ path: 'test-results/spool-editor.png', fullPage: true });
+  await page.getByRole('button', { name: 'Guardar bobina', exact: true }).click();
+  await expect(page.locator('.facts strong').first()).toHaveText(location!);
+  await expect(page.locator('.facts')).toContainText('Refill sin montar');
+  await expect(page.locator('.facts')).toContainText('<50 %');
+});
