@@ -1,8 +1,8 @@
 import { migrateFilamentNames } from './filamentNames';
-import { applyCommand, emptyState, type Command, type State } from './domain';
+import { applyCommand, emptyState, type Command, type Filament, type State } from './domain';
 
 const KEY = 'spoolio.demo.v1';
-export interface Repository { read(): State; execute(command: Command, actorId: string): Promise<State> }
+export interface Repository { read(): State | Promise<State>; execute(command: Command, actorId: string, expected?: Filament | null): Promise<State> }
 export class LocalDemoRepository implements Repository {
   constructor(private storage: Pick<Storage, 'getItem' | 'setItem'>) {}
   read(): State {

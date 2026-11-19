@@ -2,13 +2,23 @@
 
 Aplicación Android privada para gestionar el inventario compartido de filamento de impresión 3D de un grupo de amigos.
 
-## Estado
+## Estado — 19/11/2026
+
+**Código web listo para continuar desde casa; no se ha generado otra APK.** La última APK es 0.2.1 local. El código actual añade Supabase, cambio de contraseña, notificaciones flotantes, etiqueta de material más grande y selector de tema SVG en la cabecera de Configuración.
+
+El proyecto remoto ya responde: `sp_health` devuelve `ok` y las consultas anónimas al inventario se rechazan. El usuario confirmó haber creado las cuentas de Guillermo, Juan y Óscar y aplicado sus accesos. Falta verificar con sus sesiones reales el recorrido compartido y el cambio de contraseña. La última consulta de Auth seguía permitiendo nuevos registros: revisar ese ajuste.
+
+El usuario confirma que el catálogo real ya está cargado en Supabase: **270 perfiles, 292 colores y 17 perfiles pendientes**. Fuentes y cobertura en [supabase/catalog](supabase/catalog/README.md). No volver a ejecutar el SQL de reemplazo; las futuras ampliaciones deben ser incrementales.
+
+Para seguir: **[Continuar desde casa](docs/CONTINUAR_EN_CASA.md)**. `.env.local`, APK y firma Android no se suben a Git.
+
+### Última APK conservada
 
 Entrega de pruebas **0.2.1**, Android `versionCode 4` (17/11/2026). APK en `artifacts/Spoolio-0.2.1-debug.apk` (también `artifacts/Spoolio-debug.apk`), excluida de Git. Compilación Android y firma verificadas; 29 pruebas unitarias y 11 E2E correctas. Pendiente de probar esta entrega físicamente en Pixel.
 
-Primera versión funcional de demostración local. Incluye las cinco secciones, catálogo multicolor, muestras, altas manuales, filtros, cambios de ubicación y retirada con historial. Incluye una versión Android de prueba con lectura nativa del UID NFC para crear, asociar y consultar bobinas. Véase [Prueba Android y NFC](docs/ANDROID_NFC.md).
+La APK 0.2.1 es una versión funcional de demostración local. Incluye las cinco secciones, catálogo multicolor, muestras, altas manuales, filtros, cambios de ubicación y retirada con historial. Incluye una versión Android de prueba con lectura nativa del UID NFC para crear, asociar y consultar bobinas. Véase [Prueba Android y NFC](docs/ANDROID_NFC.md).
 
-**No hay autenticación real ni sincronización entre dispositivos.** Se selecciona un perfil de prueba (Mi perfil, Juan u Óscar). Fablab es una ubicación. Los datos se guardan en este navegador y origen mediante `localStorage`, en la clave separada `spoolio.demo.v1`. Las fechas son del dispositivo.
+**Por defecto se ejecuta la demo local, sin autenticación real ni sincronización.** El modo Supabase implementado se activa con configuración explícita y requiere configurar URL y clave pública en cada equipo; el proyecto actual ya tiene el esquema inicial según confirmación del usuario; véase [Supabase](docs/SUPABASE.md). Se selecciona un perfil de prueba (Mi perfil, Juan u Óscar). Fablab es una ubicación. Los datos se guardan en este navegador y origen mediante `localStorage`, en la clave separada `spoolio.demo.v1`. Las fechas son del dispositivo.
 
 ## Ejecutar
 
@@ -25,12 +35,16 @@ Abrir la dirección local mostrada por Vite, normalmente `http://127.0.0.1:5173`
 ```powershell
 npm run build
 npm test
-npm run test:e2e
+$env:VITE_DATA_MODE='local'
+$env:SPOOLIO_TEST_PORT='5198'
+$env:CI='1'
+npm run test:e2e -- --workers=1 --timeout=60000
+Remove-Item Env:VITE_DATA_MODE, Env:SPOOLIO_TEST_PORT, Env:CI
 ```
 
-Las pruebas de interfaz usan Microsoft Edge instalado en Windows, y levantan el servidor local automáticamente. Compilación en `dist/`.
+Las pruebas de interfaz fuerzan modo local; el recorrido de Auth intercepta su propio servidor simulado. No usan cuentas ni datos reales. Usan Microsoft Edge instalado en Windows, y levantan el servidor local automáticamente. Compilación en `dist/`.
 
-## Probar el recorrido
+## Probar el recorrido de demostración local
 
 1. Elegir «Mi perfil» en la pantalla de demostración.
 2. Pulsar la bobina con + a la derecha del título de Inventario o Mis bobinas → «Crear un filamento nuevo». Guardar marca, material, nombre comercial, tipo y colores. El formulario vuelve al alta de unidad.
@@ -52,11 +66,11 @@ Al entrar en un perfil, esta etapa añade una sola vez **ejemplos visuales tempo
 - `src/main.tsx` y `src/style.css`: interfaz adaptable, formularios y navegación.
 - `src/domain.test.ts` y `tests/manual-flow.spec.ts`: pruebas de reglas, persistencia e interfaz.
 
-El guardado requiere un navegador con Web Locks en un origen seguro como localhost. Si falla la persistencia no se presenta el cambio como guardado. Borrar los datos del navegador elimina esta demo; la exportación JSON permite conservar una copia, pero todavía no existe importador.
+El guardado de la demo local requiere un navegador con Web Locks en un origen seguro como localhost. Si falla la persistencia no se presenta el cambio como guardado. Borrar los datos del navegador elimina esta demo; la exportación JSON permite conservar una copia, pero todavía no existe importador.
 
-La demo no constituye una barrera de seguridad: todos los perfiles locales son seleccionables. Los permisos reales, RLS, fecha de servidor, validación de operaciones y autenticación se implementarán en el backend. La validación local no los sustituye. Las ediciones de catálogo entre pestañas no tienen todavía control de versión; el control de conflictos se aplica a unidades y movimientos.
+La demo no constituye una barrera de seguridad: todos los perfiles locales son seleccionables. El modo Supabase incluye permisos RLS, fecha de servidor, validación transaccional y autenticación; la validación de operaciones autenticadas en el proyecto real sigue pendiente. Las pruebas locales no la sustituyen. En modo local las ediciones de catálogo no tienen control de versión; en modo remoto se comparan con el perfil original antes de guardar. Las unidades usan versión en ambos modos.
 
-Pendientes: conexión Supabase/servidor, migraciones SQL y cuentas reales. El usuario confirmó NFC funcional en el Pixel en la versión anterior; hay que validar esta APK 0.2.1 en el teléfono. Android usa Capacitor 8 y un complemento local limitado a leer UID; no escribe ni descifra etiquetas.
+Pendientes: verificar acceso autenticado y operaciones entre cuentas, configurar copias remotas; el usuario confirma el catálogo cargado. El usuario confirmó NFC funcional en el Pixel en la versión anterior; hay que validar esta APK 0.2.1 en el teléfono. Android usa Capacitor 8 y un complemento local limitado a leer UID; no escribe ni descifra etiquetas.
 
 Las herramientas se eligieron consultando la [guía oficial de Vite](https://vite.dev/guide/) y la [integración de Capacitor](https://capacitorjs.com/docs/getting-started). El lockfile fija las versiones instaladas para reproducir esta etapa.
 
@@ -155,22 +169,20 @@ npm run test:e2e -- --workers=1 --timeout=60000
 
 Para Android: JDK 21, SDK 36, herramientas de compilación 35/36 y la firma de pruebas existente. Ver [Android y NFC](docs/ANDROID_NFC.md). `.android-tools`, `android/local.properties`, cachés, APK y claves son locales y no se clonan. `scripts/android-debug.ps1` usa las herramientas portátiles si existen; en otro equipo configurar JAVA_HOME y el SDK. No es necesario Android para desarrollar la interfaz web.
 
-### Próximo paso: base de datos (todavía no implementada)
+### Supabase gratuito: continuidad
 
-La decisión vigente es **Supabase (PostgreSQL + Auth)** provisional, migrable más adelante al NUC. Si se prefiere alojarlo directamente en el NUC, concretar ese cambio antes de crear infraestructura. No hay proyecto Supabase configurado en el código, cliente instalado, migraciones SQL ni variables de entorno consumidas; la APK 0.2.1 NO se conectará automáticamente al crear una base de datos.
+El esquema inicial y las cuentas ya fueron configurados por el usuario. La API pública de estado responde y el inventario deniega acceso anónimo. **No repetir la migración inicial ni el bootstrap.** En casa hay que configurar `.env.local` y validar login, permisos y operaciones compartidas con las cuentas reales. El monitor está preparado, pero no instalado en el mini PC.
 
-Orden recomendado para la siguiente sesión:
+Seguir [docs/SUPABASE.md](docs/SUPABASE.md). Sin variables la app mantiene la demo local; `.env.example` documenta cómo activar el modo remoto. No hay importación automática del Pixel ni de ejemplos. La APK 0.2.1 no se modifica.
 
-1. Confirmar destino y acceso al proyecto. Configurar URL y clave pública/publishable en variables locales; nunca incluir `service_role`, contraseñas o claves privadas en el cliente ni Git.
-2. Crear migraciones versionadas para inventario, perfiles/cuentas, miembros, ubicaciones, filamentos, colores ordenados, bobinas, UID y eventos. Usar el modelo y relaciones de `docs/REQUISITOS.md` como referencia.
-3. Incorporar Auth con correo/contraseña y miembros autorizados (los tres usuarios). Fablab es ubicación, no usuario. Políticas RLS por inventario; probar acceso permitido y rechazado.
-4. UID único normalizado por inventario, incluso para bobinas retiradas. Toda unidad pertenece a un perfil del catálogo; las ubicaciones no significan propiedad. Traslados/ediciones/retirada y eventos deben ser transaccionales, con fecha del servidor y control de concurrencia.
-5. Refactorizar `Repository.read()` (actualmente síncrono) y la carga de `src/main.tsx` para acceso asíncrono. Sustituir `LocalDemoRepository` por adaptador remoto sin simular sincronización. Añadir estados de carga/error; mostrar guardado solo tras confirmación del servidor.
-6. Definir con el usuario si se importan las unidades locales del Pixel; exportarlas antes. No subir automáticamente ejemplos visuales ni sustituir datos reales. Preservar colores, idiomas, muestras, formato, niveles de cantidad, UID e historial.
-7. Probar entre dos cuentas/dispositivos y ante cambios simultáneos. Después generar otra APK cuando se solicite y validar en Pixel.
+En modo remoto el servidor valida membresía y versiones y guarda historial en la misma transacción. La interfaz refresca periódicamente mientras no está editando. El monitor del otro PC consulta solo una fila de estado pública y no garantiza evitar las pausas del plan gratuito. Las copias y una restauración de prueba deben configurarse antes de cargar inventario real.
 
 Consultar `AGENTS.md`, `docs/REQUISITOS.md`, `docs/VALIDACION.md` y `docs/ANDROID_NFC.md` antes de continuar. No implementar ESP32, compras, estadísticas ni reciclado de etiquetas en esta etapa.
 
 - Incluido en APK 0.2.1: ubicación en ficha con pulsación corta para desplegar botones de personas/Fablab y guardar al elegir; pulsación larga (600 ms) para mover al usuario conectado. Conserva historial, sin movimiento duplicado si ya está allí. Guardado sin aviso de éxito y apertura táctil corregida.
 
 - Próxima versión (código web posterior a APK 0.2.1): Escanear no muestra Cancelar lectura ni otros botones mientras busca una etiqueta. Solo aparece Volver a intentar si la lectura falla (NFC apagado, error o tiempo agotado). Salir cancela internamente. La APK 0.2.1 no incluye este cambio; no generar otra hasta petición explícita.
+
+- Cambio de contraseña disponible en Configuración para cuentas remotas: actual + nueva + confirmación, mediante Auth updateUser con current_password. No requiere migración SQL. Pendiente de próxima APK y prueba con cuenta real.
+
+- Catálogo real preparado en `supabase/catalog/01-reemplazar-pruebas-catalogo.sql`: 270 perfiles verificados, 17 pendientes documentados. Usuario autoriza borrar todos los datos actuales de prueba (catálogo/bobinas/NFC/historial), conservando cuentas y ubicaciones. El usuario confirma la carga remota del catálogo el 19/11/2026. No volver a usar el reemplazo después de cargar datos reales. Fuentes, cobertura y validación en `supabase/catalog/README.md`.

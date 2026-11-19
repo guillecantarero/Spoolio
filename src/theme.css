@@ -30,9 +30,6 @@ p,.muted,.fine,.eyebrow,.wordmark span,.demo-bar,.section-label,.section-label s
 .welcome{background:var(--page)}
 .welcome-art{background:var(--surface)}
 .reel:after{background:var(--surface)}
-.appearance{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.appearance p{margin:0}.appearance h2{margin-bottom:9px}.appearance .eyebrow{margin-bottom:9px}
-.theme-toggle{display:flex;align-items:center;gap:10px;white-space:nowrap}.theme-toggle span{font-size:22px}
 
 /* Five bottom destinations at every preview size. Adjacent keys tuck underneath
    the octagon's lower diagonal edges; their outer edges remain square. */
@@ -65,7 +62,6 @@ p,.muted,.fine,.eyebrow,.wordmark span,.demo-bar,.section-label,.section-label s
   .app nav .nav-icon{width:22px;height:22px}
   .app nav .nav-item-1{padding-right:14px}
   .app nav .nav-item-3{padding-left:14px}
-  .appearance{align-items:flex-start;flex-direction:column}
 }
 @media(max-width:360px){
   .app nav{--scan:68px;gap:3px;padding-inline:0}
@@ -310,3 +306,10 @@ header h1{margin:0}
 .location-options{position:absolute;top:calc(100% + 6px);left:0;z-index:10;display:grid;gap:6px;width:230px;max-width:calc(100vw - 48px);padding:8px;background:var(--surface);border:1px solid var(--line);border-radius:5px;box-shadow:0 8px 24px #0003}
 .location-options button{min-height:44px;text-align:left}
 .location-options button[aria-pressed=true]{border-color:var(--ink);font-weight:700}
+
+.save-toast{position:fixed;z-index:1000;top:calc(16px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:max-content;max-width:min(480px,calc(100vw - 32px));display:flex;align-items:center;gap:12px;padding:8px 8px 8px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:5px;box-shadow:0 6px 24px #0004}
+.save-toast>span{min-width:0;overflow-wrap:anywhere;font-size:14px}
+.save-toast>button{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;padding:10px;border:0;background:transparent;color:inherit}
+.save-toast svg{width:20px;height:20px}
+
+.catalog-card .pill{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:6px 12px;font-size:13px;line-height:1.2;font-weight:650;text-align:center;overflow-wrap:anywhere}

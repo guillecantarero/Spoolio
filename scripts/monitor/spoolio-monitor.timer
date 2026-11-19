@@ -1,0 +1,10 @@
+[Unit]
+Description=Comprobar Spoolio tres veces al día
+
+[Timer]
+OnCalendar=*-*-* 08,16,23:00:00
+RandomizedDelaySec=30m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

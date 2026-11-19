@@ -1,4 +1,21 @@
-# Validación de la primera demo local
+# Registro de validación de Spoolio
+
+## Estado actual — 19/11/2026
+
+- `npm test`: **31 pruebas correctas en 6 archivos**, incluidas reglas del dominio, NFC, representación y esquema/permisos PostgreSQL embebido.
+- `npm run test:e2e -- --workers=1 --timeout=60000`: **14 recorridos correctos** en Edge, con `VITE_DATA_MODE=local`, `SPOOLIO_TEST_PORT=5198` y `CI=1`. Auth se simula en su recorrido; no se usan contraseñas reales ni se modifica Supabase.
+- `npm run build`: correcto. Aviso no bloqueante de Vite por un paquete JavaScript mayor de 500 kB; no se ha medido el rendimiento en el Pixel con este código.
+- `node --test scripts/monitor/check-health.test.mjs`: **3 pruebas correctas**. Monitor preparado, todavía sin instalar en el mini PC.
+- `node scripts/catalog/verify-import.mjs`: correcto en PostgreSQL embebido. Comprueba reversión ante datos inválidos, importación de 270 perfiles/292 colores, conservación de miembros/ubicaciones y rechazo de una segunda ejecución. No conecta con el proyecto real.
+- Comprobación remota realizada: `sp_health` responde HTTP 200 con `ok`; la lectura de inventarios sin sesión es denegada (HTTP 401/42501). La última consulta de Auth mostró `disable_signup=false`; pendiente revisar/desactivar nuevos registros.
+- El usuario confirma esquema inicial, las tres cuentas con sus accesos y **catálogo cargado en Supabase**. Esta confirmación no sustituye una prueba autenticada desde la app. No volver a ejecutar el reemplazo destructivo; futuras ampliaciones incrementales.
+- Catálogo: 270 perfiles incluidos y 17 excluidos por datos pendientes; fuentes y límites en [el informe de importación](../supabase/catalog/README.md). No se han inventado los HEX faltantes.
+- Pendientes: login y cambio de contraseña con cuenta real, operaciones entre usuarios/dispositivos, copias remotas y lectura NFC física con la próxima APK.
+- No se ha generado ni sincronizado una APK ni incrementado la versión en esta entrega. La última sigue siendo **0.2.1 / versionCode 4**, en modo local. Continuación documentada en [CONTINUAR_EN_CASA.md](CONTINUAR_EN_CASA.md).
+
+Las secciones siguientes conservan el histórico: sus pendientes corresponden a la fecha de cada revisión.
+
+## Primera demo local — histórico
 
 Fecha: 16 de noviembre de 2026.
 
@@ -116,3 +133,9 @@ Las comprobaciones de actor en el modelo local son validaciones funcionales, no 
 - Escanear sin botón de cancelar durante lectura; Volver a intentar solo tras error. Cancelación interna al salir conservada.
 - Build correcto, 29 pruebas unitarias y 12 E2E correctas; nuevo recorrido con puente NFC simulado: fallo por NFC apagado, reintento y ausencia de botones durante lectura.
 - No se sincronizó ni generó otra APK. Pendiente de la próxima entrega Android y validación física.
+
+## Preparación Supabase — revisión inicial del 19/11/2026
+
+- Integración de Auth y repositorio asíncrono compilada. Demo local y sus 13 recorridos E2E correctos. Un recorrido adicional con Supabase simulado verifica login, falta de membresía, reintento, persistencia de sesión, guardado fallido sin falso éxito y cierre de sesión.
+- Migración ejecutada en PostgreSQL embebido con roles; pruebas de permisos, historial, conflictos, UID e integridad transaccional. Monitor: tres pruebas correctas de lectura mínima, rechazo de secretos y detección de fallos.
+- En esa revisión estaban pendientes la migración remota, cuentas y catálogo. El usuario confirmó después esquema, accesos y carga del catálogo; véase el estado actual al principio. Siguen pendientes la prueba autenticada real, el recorrido entre dispositivos, copias automáticas y avisos externos del monitor. No se generó una APK.

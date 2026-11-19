@@ -1,0 +1,152 @@
+[
+  {
+    "brand": "Bambu Lab",
+    "material": "TPU",
+    "variant": "90A",
+    "nameEn": "Grape Jelly",
+    "colors": [
+      "#D6ABFF"
+    ],
+    "source": "https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf",
+    "missing": "Confirmar translucidez por color: la ficha describe varios acabados sin identificarlos inequívocamente en texto."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "TPU",
+    "variant": "90A",
+    "nameEn": "Crystal Blue",
+    "colors": [
+      "#7EB4E1"
+    ],
+    "source": "https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf",
+    "missing": "Confirmar translucidez por color: la ficha describe varios acabados sin identificarlos inequívocamente en texto."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "PETG",
+    "variant": "Translucent",
+    "nameEn": "Clear",
+    "manufacturerCode": "32101",
+    "missing": "No emparejado con tabla HEX; revisar antes de importar.",
+    "source": "https://eu.store.bambulab.com/products/petg-translucent"
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "ASA",
+    "variant": "Aero",
+    "nameEn": "White",
+    "manufacturerCode": "46100",
+    "source": "https://eu.store.bambulab.com/products/asa-aero",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "ASA",
+    "variant": "CF",
+    "nameEn": "Black",
+    "manufacturerCode": "46101",
+    "source": "https://eu.store.bambulab.com/products/asa-cf",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "PA6",
+    "variant": "CF",
+    "nameEn": "Black",
+    "manufacturerCode": "72100",
+    "source": "https://eu.store.bambulab.com/products/pa6-cf",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "PAHT",
+    "variant": "CF",
+    "nameEn": "Black",
+    "manufacturerCode": "70100",
+    "source": "https://eu.store.bambulab.com/products/paht-cf",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "PET",
+    "variant": "CF",
+    "nameEn": "Black",
+    "manufacturerCode": "71100",
+    "source": "https://eu.store.bambulab.com/products/pet-cf",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "PPS",
+    "variant": "CF",
+    "nameEn": "Black",
+    "manufacturerCode": "76100",
+    "source": "https://eu.store.bambulab.com/products/pps-cf",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Bambu Lab",
+    "material": "PPA",
+    "variant": "CF",
+    "nameEn": "Black",
+    "manufacturerCode": "73100",
+    "source": "https://eu.store.bambulab.com/products/ppa-cf",
+    "missing": "Código HEX de este producto no localizado en fuentes oficiales consultadas. No se deduce del nombre del color."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Arena",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Mármol",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Ladrillo",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Mármol Amarillo",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Granito Azul",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Cuarzo",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  },
+  {
+    "brand": "Winkle",
+    "material": "PLA",
+    "variant": "HD Texture",
+    "name": "Cemento",
+    "source": "https://winkle.shop/filamento-impresora-3d/pla/filamento-pla-hd/pla-hd-texture/",
+    "missing": "Código HEX no publicado en la ficha consultada; solo imágenes de textura."
+  }
+]

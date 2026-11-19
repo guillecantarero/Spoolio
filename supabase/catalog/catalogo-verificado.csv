@@ -1,0 +1,271 @@
+﻿marca,material,variante,nombre,nameEn,coloresHEX,distribucion,translucido,fuente
+Bambu Lab,ABS,GF,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/7d0175cb776b415e94eec1a8c7ffbf54/ABS-GF_Hex_Code_Table.pdf
+Bambu Lab,ABS,GF,Gris,Gray,#C6C6C6,unicolor,False,https://store.bblcdn.com/s7/default/7d0175cb776b415e94eec1a8c7ffbf54/ABS-GF_Hex_Code_Table.pdf
+Bambu Lab,ABS,GF,Naranja,Orange,#F48438,unicolor,False,https://store.bblcdn.com/s7/default/7d0175cb776b415e94eec1a8c7ffbf54/ABS-GF_Hex_Code_Table.pdf
+Bambu Lab,ABS,GF,Rojo,Red,#E83100,unicolor,False,https://store.bblcdn.com/s7/default/7d0175cb776b415e94eec1a8c7ffbf54/ABS-GF_Hex_Code_Table.pdf
+Bambu Lab,ABS,GF,Azul,Blue,#0C3B95,unicolor,False,https://store.bblcdn.com/s7/default/7d0175cb776b415e94eec1a8c7ffbf54/ABS-GF_Hex_Code_Table.pdf
+Bambu Lab,ABS,GF,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/7d0175cb776b415e94eec1a8c7ffbf54/ABS-GF_Hex_Code_Table.pdf
+Bambu Lab,ABS,Basic,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Bambu Green,Bambu Green,#00AE42,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Oliva,Olive,#789D4A,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Azure,Azure,#489FDF,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Azul Marino,Navy Blue,#0C2340,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Azul,Blue,#0A2CA5,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Tangerine Yellow,Tangerine Yellow,#FFC72C,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Naranja,Orange,#FF6A13,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Rojo,Red,#D32941,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Purple,Purple,#AF1685,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Plata,Silver,#87909A,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ABS,Basic,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/a7d9f82d874c453cbbc1bb0efb82dd42/Bambu_ABS_Hex_Code_(1).pdf
+Bambu Lab,ASA,Basic,Blanco,White,#FFFAF2,unicolor,False,https://store.bblcdn.com/s7/default/8b59c35ced5c4b848affd97e0664e12c/ASA_Hex_Code_Table.pdf
+Bambu Lab,ASA,Basic,Gris,Gray,#8A949E,unicolor,False,https://store.bblcdn.com/s7/default/8b59c35ced5c4b848affd97e0664e12c/ASA_Hex_Code_Table.pdf
+Bambu Lab,ASA,Basic,Rojo,Red,#E02928,unicolor,False,https://store.bblcdn.com/s7/default/8b59c35ced5c4b848affd97e0664e12c/ASA_Hex_Code_Table.pdf
+Bambu Lab,ASA,Basic,Verde,Green,#00A6A0,unicolor,False,https://store.bblcdn.com/s7/default/8b59c35ced5c4b848affd97e0664e12c/ASA_Hex_Code_Table.pdf
+Bambu Lab,ASA,Basic,Azul,Blue,#2140B4,unicolor,False,https://store.bblcdn.com/s7/default/8b59c35ced5c4b848affd97e0664e12c/ASA_Hex_Code_Table.pdf
+Bambu Lab,ASA,Basic,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/8b59c35ced5c4b848affd97e0664e12c/ASA_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Blanco,White,#EAEAE4,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Azul,Blue,#75AED8,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Naranja,Orange,#FF4800,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Marrón,Brown,#5B492F,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Amarillo,Yellow,#FFCE00,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Lima,Lime,#C5ED48,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Gris,Gray,#353533,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PA6,GF,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/59bf6c3e0af14df380b9c69c40b02772/PA6-GF_Hex_Code_Table.pdf
+Bambu Lab,PC,Basic,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/e6a6c5416fc440d88639172ff9e546ac/PC_Hex_Code_Table.pdf
+Bambu Lab,PC,Basic,Translúcido,Transparent€,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/e6a6c5416fc440d88639172ff9e546ac/PC_Hex_Code_Table.pdf
+Bambu Lab,PC,Basic,Negro transparente,Clear Black,#686865,unicolor,True,https://store.bblcdn.com/s7/default/e6a6c5416fc440d88639172ff9e546ac/PC_Hex_Code_Table.pdf
+Bambu Lab,PC,Basic,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/e6a6c5416fc440d88639172ff9e546ac/PC_Hex_Code_Table.pdf
+Bambu Lab,PC,FR,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/9fc931c1464542df9c5fc5d9f6f9bf4b/PC_FR_Hex_Code_Table.pdf
+Bambu Lab,PC,FR,Gris,Gray,#A8A8AA,unicolor,False,https://store.bblcdn.com/s7/default/9fc931c1464542df9c5fc5d9f6f9bf4b/PC_FR_Hex_Code_Table.pdf
+Bambu Lab,PC,FR,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/9fc931c1464542df9c5fc5d9f6f9bf4b/PC_FR_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Rojo,Red,#D6001C,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Naranja,Orange,#FF671F,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Amarillo,Yellow,#FCE300,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Azul Reflex,Reflex Blue,#001489,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Azul marino,Navy Blue,#0086D6,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Azul Brumoso,Misty Blue,#688197,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Verde,Green,#009639,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Verde Pino,Pine Green,#034638,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Marrón oscuro,Dark Brown,#4F2C1D,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Beige oscuro,Dark Beige,#DBC8B6,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Gris,Gray,#7F7E83,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,Basic,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/7260019fb4b243ce9b1963d51fc24e83/PETG_Basic_Hex_Code_Table.pdf
+Bambu Lab,PETG,CF,Rojo ladrillo,Brick Red,#9F332A,unicolor,False,https://store.bblcdn.com/s7/default/2b5c536e5f824b6d80484c3bcfdfbb17/PETG-CF_Hex_Code_Table.pdf
+Bambu Lab,PETG,CF,Violeta púrpura,Violet Purple,#583061,unicolor,False,https://store.bblcdn.com/s7/default/2b5c536e5f824b6d80484c3bcfdfbb17/PETG-CF_Hex_Code_Table.pdf
+Bambu Lab,PETG,CF,Azul índigo,Indigo Blue,#324585,unicolor,False,https://store.bblcdn.com/s7/default/2b5c536e5f824b6d80484c3bcfdfbb17/PETG-CF_Hex_Code_Table.pdf
+Bambu Lab,PETG,CF,Verde malaquita,Malachite Green,#16B08E,unicolor,False,https://store.bblcdn.com/s7/default/2b5c536e5f824b6d80484c3bcfdfbb17/PETG-CF_Hex_Code_Table.pdf
+Bambu Lab,PETG,CF,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/2b5c536e5f824b6d80484c3bcfdfbb17/PETG-CF_Hex_Code_Table.pdf
+Bambu Lab,PETG,CF,Gris Titán,Titan Gray,#565656,unicolor,False,https://store.bblcdn.com/s7/default/2b5c536e5f824b6d80484c3bcfdfbb17/PETG-CF_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Black,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,White,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Pink,Pink,#FABBCB,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Violet,Violet,#A7A4E0,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Baby Blue,Baby Blue,#B9D9EB,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Avocado Green,Avocado Green,#BCE194,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Lime,Lime,#C0DF16,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Matte,Gray,Gray,#7F7E83,unicolor,False,https://store.bblcdn.com/s7/default/9b109944ad61471eb35d46e6263a28ff/Bambu_PETG_Matte_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Rosa,Translucent Pink,#F9C1BD,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Morado,Translucent Purple,#D6ABFF,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Naranja,Translucent Orange,#FF911A,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Marrón,Translucent Brown,#C9A381,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Verde azulado,Translucent Teal,#77EDD7,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Luz Azul,Translucent Light Blue,#61B0FF,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Oliva,Translucent Olive,#748C45,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PETG,Translucent,Gris,Translucent Gray,#8E8E8E,unicolor,True,https://store.bblcdn.com/s7/default/5c46875459bc4a27986707f49560a961/PETG_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic,Blanco jade,Jade White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Beis,Beige,#F7E6DE,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Gris claro,Light Gray,#D1D3D5,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Plateado,Silver,#A6A9AA,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Gris,Gray,#8E9089,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Magenta,Magenta,#EC008C,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Rosa,Pink,#F55A74,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Rosa fucsia,Hot Pink,#F5547C,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Naranja,Orange,#FF6A13,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Naranja calabaza,Pumpkin Orange,#FF9016,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Dorado,Gold,#E4BD68,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Amarillo girasol,Sunflower Yellow,#FEC600,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Amarillo,Yellow,#F4EE2A,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Verde brillante,Bright Green,#BECF00,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Verde bambú,Bambu Green,#00AE42,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Verde muérdago,Mistletoe Green,#3F8E43,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Bronce,Bronze,#847D48,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Marrón cacao,Cocoa Brown,#6F5034,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Marrón,Brown,#9D432C,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Rojo granate,Maroon Red,#9D2235,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Rojo,Red,#C12E1F,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Turquesa,Turquoise,#00B1B7,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Cian,Cyan,#0086D6,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Azul,Blue,#0A2989,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Azul cobalto,Cobalt Blue,#0056B8,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Púrpura,Purple,#5E43B7,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Púrpura índigo,Indigo Purple,#482960,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Azul Gris,Blue Grey,#5B6579,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Gris oscuro,Dark Gray,#545454,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/1084369ef84345bbaa5d704a492954e0/Bambu_PLA_Basic_Hex_Code.pdf
+Bambu Lab,PLA,Basic Gradient,Susurro ártico,Arctic Whisper,#FFFFFF;#9CDBD9,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Del océano a la pradera,Ocean to Meadow,#54FF9B;#307FE2,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Nube de algodón de azúcar,Cotton Candy Cloud,#E7C1D5;#8EC9E9,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Chicle de arándano,Blueberry Bubblegum,#6FCAEF;#8573DD,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Lima menta,Mint Lime,#4EC939;#B6FF43,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Brisa solar,Solar Breeze,#FFFFFF;#E94B3C,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Rosa cítrico,Pink Citrus,#F78F77;#E4505A,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,Basic Gradient,Resplandor del crepúsculo,Dusk Glare,#ED9558;#CE4406,gradiente,False,https://store.bblcdn.com/s7/default/21e9ad53c97a46dd9bd58e5dd1bc93ac/PLA_Basic_Gradient_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Rojo burdeos,Burgundy Red,#951E23,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Púrpura iris,Iris Purple,#69398E,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Verde matcha,Matcha Green,#5C9748,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Azul vaquero,Jeans Blue,#6E88BC,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Azul real,Royal Blue,#2842AD,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Gris lava,Lava Gray,#4D5054,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,CF,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/98df744e02e04d8599956b4fe8b19ff4/PLA-CF_Hex_Code_Table.pdf
+Bambu Lab,PLA,Galaxy,Marrón,Brown,#684A43,unicolor,False,https://store.bblcdn.com/s7/default/dcb05d280a474fb095adfee359c13574/PLA_Galaxy_Hex_Code_Table.pdf
+Bambu Lab,PLA,Galaxy,Verde,Green,#3B665E,unicolor,False,https://store.bblcdn.com/s7/default/dcb05d280a474fb095adfee359c13574/PLA_Galaxy_Hex_Code_Table.pdf
+Bambu Lab,PLA,Galaxy,Nebulosa,Nebulae,#424379,unicolor,False,https://store.bblcdn.com/s7/default/dcb05d280a474fb095adfee359c13574/PLA_Galaxy_Hex_Code_Table.pdf
+Bambu Lab,PLA,Galaxy,Púrpura,Purple,#594177,unicolor,False,https://store.bblcdn.com/s7/default/dcb05d280a474fb095adfee359c13574/PLA_Galaxy_Hex_Code_Table.pdf
+Bambu Lab,PLA,Glow,Verde brillante,Glow Green,#A1FFAC,unicolor,False,https://store.bblcdn.com/s7/default/bbc0a351ffca4503968910ba98cae27d/PLA_Glow_Hex_Code_Table.pdf
+Bambu Lab,PLA,Glow,Amarillo brillante,Glow Yellow,#F8FF80,unicolor,False,https://store.bblcdn.com/s7/default/bbc0a351ffca4503968910ba98cae27d/PLA_Glow_Hex_Code_Table.pdf
+Bambu Lab,PLA,Glow,Rosa brillante,Glow Pink,#F17B8F,unicolor,False,https://store.bblcdn.com/s7/default/bbc0a351ffca4503968910ba98cae27d/PLA_Glow_Hex_Code_Table.pdf
+Bambu Lab,PLA,Glow,Azul brillante,Glow Blue,#7AC0E9,unicolor,False,https://store.bblcdn.com/s7/default/bbc0a351ffca4503968910ba98cae27d/PLA_Glow_Hex_Code_Table.pdf
+Bambu Lab,PLA,Glow,Naranja brillante,Glow Orange,#FF9D5B,unicolor,False,https://store.bblcdn.com/s7/default/bbc0a351ffca4503968910ba98cae27d/PLA_Glow_Hex_Code_Table.pdf
+Bambu Lab,PLA,Marble,Mármol blanco,White Marble,#F7F3F0,unicolor,False,https://store.bblcdn.com/s7/default/89394d4bbaff4f519bf5b9c3e7c7fcac/PLA_Marble_Hex_Code_Table.pdf
+Bambu Lab,PLA,Marble,Granate rojo,Red Granite,#AD4E38,unicolor,False,https://store.bblcdn.com/s7/default/89394d4bbaff4f519bf5b9c3e7c7fcac/PLA_Marble_Hex_Code_Table.pdf
+Bambu Lab,PLA,Matte,Blanco Marfil,Ivory White,#FFFFFF,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Blanco Hueso,Bone White,#CBC6B8,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Bronceado desierto,Desert Tan,#E8DBB7,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Marrón Latte,Latte Brown,#D3B7A7,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Caramelo,Caramel,#AE835B,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Terracota,Terracotta,#B15533,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Marrón oscuro,Dark Brown,#7D6556,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Chocolate oscuro,Dark Chocolate,#4D3324,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Morado lila,Lilac Purple,#AE96D4,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Rosa Sakura,Sakura Pink,#E8AFCF,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Naranja Mandarina,Mandarin Orange,#F99963,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Amarillo Limón,Lemon Yellow,#F7D959,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Ciruela,Plum,#950051,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Rojo Escarlata,Scarlet Red,#DE4343,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Rojo oscuro,Dark Red,#BB3D43,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Verde oscuro,Dark Green,#68724D,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Verde hierba,Grass Green,#61C680,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Verde Manzana,Apple Green,#C2E189,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Azul Hielo,Ice Blue,#A3D8E1,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Azul cielo,Sky Blue,#56B7E6,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Azul Marino,Marine Blue,#0078BF,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Azul oscuro,Dark Blue,#042F56,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Gris ceniza,Ash Gray,#9B9EA0,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Gris Nardo,Nardo Gray,#757575,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Matte,Carbón,Charcoal,#000000,unicolor,False,https://cdn.shopify.com/s/files/1/0584/7236/6216/files/Bambu_PLA_Matte_Hex_Code.pdf
+Bambu Lab,PLA,Palette,Magenta,Magenta,#E24585,unicolor,False,https://store.bblcdn.com/s7/default/8a89cc11c9ce4421a9593f9ee9580982/Bambu_PLA_Palette_Hex_Code.pdf
+Bambu Lab,PLA,Palette,Cian,Cyan,#0090DA,unicolor,False,https://store.bblcdn.com/s7/default/8a89cc11c9ce4421a9593f9ee9580982/Bambu_PLA_Palette_Hex_Code.pdf
+Bambu Lab,PLA,Palette,Amarillo,Yellow,#FCE300,unicolor,False,https://store.bblcdn.com/s7/default/8a89cc11c9ce4421a9593f9ee9580982/Bambu_PLA_Palette_Hex_Code.pdf
+Bambu Lab,PLA,Palette,Clave,Key,#000000,unicolor,False,https://store.bblcdn.com/s7/default/8a89cc11c9ce4421a9593f9ee9580982/Bambu_PLA_Palette_Hex_Code.pdf
+Bambu Lab,PLA,Palette,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/8a89cc11c9ce4421a9593f9ee9580982/Bambu_PLA_Palette_Hex_Code.pdf
+Bambu Lab,PLA,Metal,Dorado iridio metalizado,Iridium Gold Metallic,#B39B84,unicolor,False,https://store.bblcdn.com/s7/default/5e89111c48cb487f88b561ef16aa9175/PLA_Metal_Hex_Code_Table.pdf
+Bambu Lab,PLA,Metal,Marrón cobre metalizado,Copper Brown Metallic,#AA6443,unicolor,False,https://store.bblcdn.com/s7/default/5e89111c48cb487f88b561ef16aa9175/PLA_Metal_Hex_Code_Table.pdf
+Bambu Lab,PLA,Metal,Verde óxido metálico,Oxide Green Metallic,#1D7C6A,unicolor,False,https://store.bblcdn.com/s7/default/5e89111c48cb487f88b561ef16aa9175/PLA_Metal_Hex_Code_Table.pdf
+Bambu Lab,PLA,Metal,Azul cobalto metalizado,Cobalt Blue Metallic,#39699E,unicolor,False,https://store.bblcdn.com/s7/default/5e89111c48cb487f88b561ef16aa9175/PLA_Metal_Hex_Code_Table.pdf
+Bambu Lab,PLA,Metal,Gris hierro metalizado,Iron Gray Metallic,#43403D,unicolor,False,https://store.bblcdn.com/s7/default/5e89111c48cb487f88b561ef16aa9175/PLA_Metal_Hex_Code_Table.pdf
+Bambu Lab,PLA,Pure,Blanco puro,Pure White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/cb680ec8a366477b9379e2fe1eba98e9/Bambu_PLA_Pure_Hex_Code.pdf
+Bambu Lab,PLA,Pure,Negro Absoluto,Absolute Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/cb680ec8a366477b9379e2fe1eba98e9/Bambu_PLA_Pure_Hex_Code.pdf
+Bambu Lab,PLA,Pure,Azul bebé,Baby Blue,#A4DBE8,unicolor,False,https://store.bblcdn.com/s7/default/cb680ec8a366477b9379e2fe1eba98e9/Bambu_PLA_Pure_Hex_Code.pdf
+Bambu Lab,PLA,Pure,Rosa lechoso,Milky Pink,#F7CED7,unicolor,False,https://store.bblcdn.com/s7/default/cb680ec8a366477b9379e2fe1eba98e9/Bambu_PLA_Pure_Hex_Code.pdf
+Bambu Lab,PLA,Pure,Albaricoque,Apricot,#FFB673,unicolor,False,https://store.bblcdn.com/s7/default/cb680ec8a366477b9379e2fe1eba98e9/Bambu_PLA_Pure_Hex_Code.pdf
+Bambu Lab,PLA,Silk+,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Plateado,Silver,#C8C8C8,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Champán,Champagne,#F3CFB2,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Rosa,Pink,#F7ADA6,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Oro rosa,Rose Gold,#BA9594,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Rojo caramelo,Candy Red,#D02727,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Dorado,Gold,#F4A925,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Menta,Mint,#96DCB9,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Verde caramelo,Candy Green,#018814,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Azul bebé,Baby Blue,#A8C6EE,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Azul,Blue,#008BDA,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Púrpura,Purple,#8671CB,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk+,Gris titán,Titan Gray,#5F6367,unicolor,False,https://store.bblcdn.com/s7/default/8aaeedf46e504db4afa2fc13cfbfae0a/PLA_Silk_Upgrade_Hex_Code_Table.pdf
+Bambu Lab,PLA,Sparkle,Dorado clásico brillante,Classic Gold Sparkle,#CEA629,unicolor,False,https://store.bblcdn.com/s7/default/2a16583d2dc6404ea2ebcdf192441852/PLA_Sparkle_Hex_Code_Table.pdf
+Bambu Lab,PLA,Sparkle,Gris pizarra brillante,Slate Gray Sparkle,#8E9089,unicolor,False,https://store.bblcdn.com/s7/default/2a16583d2dc6404ea2ebcdf192441852/PLA_Sparkle_Hex_Code_Table.pdf
+Bambu Lab,PLA,Sparkle,Rojo carmesí brillante,Crimson Red Sparkle,#792B36,unicolor,False,https://store.bblcdn.com/s7/default/2a16583d2dc6404ea2ebcdf192441852/PLA_Sparkle_Hex_Code_Table.pdf
+Bambu Lab,PLA,Sparkle,Púrpura real brillante,Royal Purple Sparkle,#483D8B,unicolor,False,https://store.bblcdn.com/s7/default/2a16583d2dc6404ea2ebcdf192441852/PLA_Sparkle_Hex_Code_Table.pdf
+Bambu Lab,PLA,Sparkle,Verde alpino brillante,Alpine Green Sparkle,#3F5443,unicolor,False,https://store.bblcdn.com/s7/default/2a16583d2dc6404ea2ebcdf192441852/PLA_Sparkle_Hex_Code_Table.pdf
+Bambu Lab,PLA,Sparkle,Negro ónix brillante,Onyx Black Sparkle,#2D2B28,unicolor,False,https://store.bblcdn.com/s7/default/2a16583d2dc6404ea2ebcdf192441852/PLA_Sparkle_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Gris,Gray,#AFB1AE,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Plateado,Silver,#959698,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Amarillo,Yellow,#F4D53F,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Cian,Cyan,#009BD8,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Tough+,Naranja,Orange,#DC3A27,unicolor,False,https://store.bblcdn.com/s1/default/3d989ddc07694c378496784834947125/Bambu_PLA_Tough_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Verde azulado,Teal,#009FA1,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Jade claro,Light Jade,#96D8AF,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Azul,Blue,#0047BB,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Amarillo suave,Mellow Yellow,#F5DBAB,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Púrpura,Purple,#8344B0,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Rosa cereza,Cherry Pink,#F5B6CD,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Naranja,Orange,#F74E02,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Azul hielo,Ice Blue,#B8CDE9,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Rojo,Red,#B50011,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,PLA,Translucent,Lavanda,Lavender,#B8ACD6,unicolor,True,https://store.bblcdn.com/s7/default/6ca923cd4e3242448324c63505e91dad/PLA_Translucent_Hex_Code_Table.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Rojo,Red,#E4002B,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Rosa,Pink,#FABBCB,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Morado,Purple,#AD96DC,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Naranja Mandarina,Mandarin Orange,#FFA06A,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Verde hierba,Grass Green,#7CCC6C,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Verde oscuro,Dark Green,#617354,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Marfil oscuro,Dark Ivory,#F1E6B2,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Amarillo Limón,Lemon Yellow,#FBDB65,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,75A · 2.85 mm,Cian,Cyan,#00A3E1,unicolor,False,https://store.bblcdn.com/s7/default/a1146f73c7cd41d3ad746819620096ac/Bambu_TPU_75A-hex_code.pdf
+Bambu Lab,TPU,90A,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf
+Bambu Lab,TPU,90A,Blanco,White,#FFFFEE,unicolor,False,https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf
+Bambu Lab,TPU,90A,Marrón Cacao,Cocoa Brown,#5C4738,unicolor,False,https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf
+Bambu Lab,TPU,90A,Quicksilver,Quicksilver,#9EA2A2,unicolor,False,https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf
+Bambu Lab,TPU,90A,Blaze,Blaze,#F1AAA8;#D21B3C,gradiente,False,https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf
+Bambu Lab,TPU,90A,Congelado,Frozen,#FFFFFF;#40B6E4,gradiente,False,https://store.bblcdn.com/s1/default/7e2c8bbbf2ff4c6996778bbb577bae13/Bambu_TPU_90A_Hex_Code_Table.pdf
+Bambu Lab,TPU,85A,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/c910d98d275f470ba1a3eb5639d7c81f/Bambu_TPU_85A_Hex_Code.pdf
+Bambu Lab,TPU,85A,Luz Cian,Light Cyan,#C3E2D6,unicolor,False,https://store.bblcdn.com/s7/default/c910d98d275f470ba1a3eb5639d7c81f/Bambu_TPU_85A_Hex_Code.pdf
+Bambu Lab,TPU,85A,Naranja neón,Neon Orange,#F68B1B,unicolor,False,https://store.bblcdn.com/s7/default/c910d98d275f470ba1a3eb5639d7c81f/Bambu_TPU_85A_Hex_Code.pdf
+Bambu Lab,TPU,85A,Beige Rosado/Carne,Rose Beige (Flesh),#F3CFB2,unicolor,False,https://store.bblcdn.com/s7/default/c910d98d275f470ba1a3eb5639d7c81f/Bambu_TPU_85A_Hex_Code.pdf
+Bambu Lab,TPU,85A,Verde lima,Lime Green,#CDEA80,unicolor,False,https://store.bblcdn.com/s7/default/c910d98d275f470ba1a3eb5639d7c81f/Bambu_TPU_85A_Hex_Code.pdf
+Bambu Lab,PLA,Wood,Roble blanco,White Oak,#D6CCA3,unicolor,False,https://store.bblcdn.com/s7/default/312a35d5cdce4fc5a76692955b493a82/PLA_Wood_Hex_Code_Table.pdf
+Bambu Lab,PLA,Wood,Amarillo ocre,Ochre Yellow,#C98935,unicolor,False,https://store.bblcdn.com/s7/default/312a35d5cdce4fc5a76692955b493a82/PLA_Wood_Hex_Code_Table.pdf
+Bambu Lab,PLA,Wood,Marrón arcilla,Clay Brown,#995F11,unicolor,False,https://store.bblcdn.com/s7/default/312a35d5cdce4fc5a76692955b493a82/PLA_Wood_Hex_Code_Table.pdf
+Bambu Lab,PLA,Wood,Abedul clásico,Classic Birch,#918669,unicolor,False,https://store.bblcdn.com/s7/default/312a35d5cdce4fc5a76692955b493a82/PLA_Wood_Hex_Code_Table.pdf
+Bambu Lab,PLA,Wood,Palo de rosa,Rosewood,#4C241C,unicolor,False,https://store.bblcdn.com/s7/default/312a35d5cdce4fc5a76692955b493a82/PLA_Wood_Hex_Code_Table.pdf
+Bambu Lab,PLA,Wood,Nogal negro,Black Walnut,#4F3F24,unicolor,False,https://store.bblcdn.com/s7/default/312a35d5cdce4fc5a76692955b493a82/PLA_Wood_Hex_Code_Table.pdf
+Bambu Lab,TPU,95A HF,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/6ec4738ccb144e8880cfec81a4cb6665/TPU_95A_HF_Hex_Code_Table.pdf
+Bambu Lab,TPU,95A HF,Gris,Gray,#898D8D,unicolor,False,https://store.bblcdn.com/s7/default/6ec4738ccb144e8880cfec81a4cb6665/TPU_95A_HF_Hex_Code_Table.pdf
+Bambu Lab,TPU,95A HF,Amarillo,Yellow,#F3E600,unicolor,False,https://store.bblcdn.com/s7/default/6ec4738ccb144e8880cfec81a4cb6665/TPU_95A_HF_Hex_Code_Table.pdf
+Bambu Lab,TPU,95A HF,Azul,Blue,#0072CE,unicolor,False,https://store.bblcdn.com/s7/default/6ec4738ccb144e8880cfec81a4cb6665/TPU_95A_HF_Hex_Code_Table.pdf
+Bambu Lab,TPU,95A HF,Rojo,Red,#C8102E,unicolor,False,https://store.bblcdn.com/s7/default/6ec4738ccb144e8880cfec81a4cb6665/TPU_95A_HF_Hex_Code_Table.pdf
+Bambu Lab,TPU,95A HF,Negro,Black,#101820,unicolor,False,https://store.bblcdn.com/s7/default/6ec4738ccb144e8880cfec81a4cb6665/TPU_95A_HF_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Blanco,White,#FFFFFF,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Gris,Gray,#939393,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Amarillo,Yellow,#F9EF41,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Verde neón,Neon Green,#90FF1A,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Rojo,Red,#ED0000,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Azul,Blue,#5898DD,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,TPU,for AMS,Negro,Black,#000000,unicolor,False,https://store.bblcdn.com/s7/default/ac3ca83e470c4e39873463ae1f8ac7bb/TPU_for_AMS_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Magenta Místico,Mystic Magenta,#720062;#3A913F,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Phantom Blue,Phantom Blue,#00629B;#000000,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Eclipse de terciopelo,Velvet Eclipse,#000000;#A34342,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Resplandor de medianoche,Midnight Blaze,#0047BB;#7D1B49,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Rosa dorado,Gilded Rose,#FF9425;#FCA2BF,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Azul Hawái,Blue Hawaii,#60A4E8;#4CE4A0,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Ciudad de neón,Neon City,#0047BB;#BB22A3,multicolor,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Púrpura Aurora,Aurora Purple,#7F3696;#006EC9,gradiente,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Playa del Sur,South Beach,#F772A4;#00918B,gradiente,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PLA,Silk Multi-Color,Resplandor del Amanecer,Dawn Radiance,#EC984C;#6CD4BC;#A66EB9;#D87694,gradiente,False,https://store.bblcdn.com/s1/default/7e3a5dec148b468d862d96593d01d624/PLA_Silk_Mutil-color_Hex_Code_Table.pdf
+Bambu Lab,PETG,HF,Yellow,Yellow,#FFD00B,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Orange,Orange,#F75403,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Green,Green,#00AE42,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Red,Red,#EB3A3A,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Blue,Blue,#002E96,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Black,Black,#000000,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,White,White,#FFFFFF,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Cream,Cream,#F9DFB9,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Lime Green,Lime Green,#6EE53C,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Forest Green,Forest Green,#39541A,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Lake Blue,Lake Blue,#1F79E5,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Peanut Brown,Peanut Brown,#875718,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Gray,Gray,#ADB1B2,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf
+Bambu Lab,PETG,HF,Dark Gray,Dark Gray,#515151,unicolor,False,https://bambulab-eu.myshopify.com/products/petg-hf

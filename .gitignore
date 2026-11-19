@@ -16,3 +16,7 @@ Thumbs.db
 artifacts/
 *.keystore
 *.jks
+
+# Fuentes temporales de investigación del catálogo
+.catalog-tools/
+tmp/

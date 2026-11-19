@@ -1,8 +1,8 @@
 # Spoolio — Requisitos y decisiones
 
-Estado: demostración local Android con NFC confirmado en Pixel en una versión anterior; entrega 0.2.1 preparada para nueva validación física. Backend pendiente.
+Estado: demostración local Android con NFC confirmado en Pixel en una versión anterior; entrega 0.2.1 preparada para nueva validación física. Integración Supabase implementada; esquema y cuentas confirmados por el usuario, salud remota comprobada y operaciones autenticadas pendientes de validación.
 
-Última actualización: 17 de noviembre de 2026.
+Última actualización: 19 de noviembre de 2026.
 
 Este documento recoge las decisiones del usuario y los requisitos del documento inicial que siguen vigentes. Las aclaraciones posteriores prevalecen sobre el texto inicial. Se actualizará conforme se acuerden nuevos requisitos; las cuestiones pendientes no son decisiones cerradas.
 
@@ -17,8 +17,10 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 
 ## 2. Personas, cuentas y ubicaciones
 
-- **ACC-01.** Usuarios iniciales: el usuario promotor, Juan y Óscar. El nombre visible del promotor está pendiente.
+- **ACC-01.** Usuarios iniciales: el usuario promotor, Juan y Óscar. El promotor usa el nombre visible Guillermo.
+- **ACC-07.** Configuración permite cambiar contraseña indicando la actual y dos veces la nueva. Validar coincidencia, mínimo 8 caracteres y contraseña distinta; el servidor verifica la actual. Aviso flotante de éxito y campos vacíos al guardar. Solo cuentas reales.
 - **ACC-02.** Inicio de sesión individual mediante correo y contraseña.
+- **ACC-06.** Conservar la sesión en el dispositivo y renovar sus credenciales automáticamente; cerrar sesión desde Configuración. No guardar la contraseña. El usuario confirmó las cuentas reales de Juan y Óscar el 19/11/2026; example.com solo se conserva como marcador en ejemplos/pruebas.
 - **ACC-03.** Todos los miembros autorizados pueden crear, modificar y retirar bobinas, y gestionar perfiles del catálogo.
 - **ACC-04.** Registrarse no concede automáticamente acceso al inventario compartido. Mantener autorización de miembros y políticas RLS, sin añadir complejidad innecesaria al uso privado.
 - **ACC-05.** Nunca incluir claves privilegiadas de Supabase en la app. Un UID NFC identifica una bobina, no autentica a una persona.
@@ -42,7 +44,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **NAV-07.** Buscar y filtrar inventario por marca, material, color y ubicación. Las unidades retiradas quedan fuera de las vistas activas.
 - **NAV-08.** Navegación fija inferior en este orden: Mis bobinas, Inventario, Escanear, Catálogo, Configuración. Escanear es el botón central más grande, con forma de octógono de esquinas redondeadas e icono NFC minimalista sin texto visible. Los cuatro botones laterales son cuadrados; los adyacentes se ajustan al contorno del octógono.
 - **NAV-09.** La barra inferior ocupa todo el ancho de la pantalla, sin marco ni contenedor exterior redondeado y sin márgenes laterales. Mantener el área segura inferior del dispositivo.
-- **UI-01.** Modo oscuro predeterminado. Configuración incluye un botón para alternar entre oscuro y claro, conservando la preferencia en el dispositivo.
+- **UI-01.** Modo oscuro predeterminado. Configuración incluye un botón a la derecha del título, en la misma posición y tamaño que las altas de bobinas y filamentos. Sin texto visible: SVG minimalista de sol en modo oscuro (cambia a claro) y luna en modo claro (cambia a oscuro), con nombre accesible. Sustituye al panel Apariencia y conserva la preferencia en el dispositivo.
 
 - **UI-02.** Base visual neutra (negros, grises y blancos). Acentos por sección: Mis bobinas azul, Inventario verde, Catálogo naranja y Configuración rojo. Los colores reales de los filamentos se conservan. El botón Escanear es claro en modo oscuro y oscuro en modo claro, independiente del acento de sección.
 
@@ -51,6 +53,8 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **UI-04.** Cambiar perfil solo en Configuración. Solo en Inventario y Mis bobinas, el orden es título, contadores y buscador; los contadores se sitúan debajo del título y reducen su altura aproximadamente un 10 %. Son exactamente dos columnas: primero las unidades activas con el usuario conectado y después el total de unidades activas del inventario, independientemente de la sección o filtros.
 
 - **UI-05.** Catálogo no muestra los contadores. El botón octogonal combina bobina SVG neutra y símbolo NFC con fondo transparente, superpuesto en su esquina inferior izquierda, y centraliza escaneo y alta manual. La pantalla de escaneo usa el lector nativo en Android e indica su indisponibilidad en navegador; nunca simular una lectura en la app.
+
+- **UI-16.** Los avisos de éxito (incluido guardar bobinas y filamentos) se muestran como notificación flotante, sin desplazar la interfaz, con cierre automático a los 5 segundos y botón × a la derecha. Cada nuevo aviso reinicia el tiempo, aunque repita el texto. Mantener errores visibles y la excepción de ubicación sin aviso (HIS-05).
 
 - **UI-15.** Variante actual: Escanear muestra un Benchy en perspectiva de tres cuartos, con volúmenes blancos y grises y sin contorno, inspirado en la referencia visual aportada (estilo Sin contorno), en SVG ligero, con balanceo y ondas en bucle. Sustituye al símbolo de lectura y a la estantería para reducir elementos dibujados. La flotación combina elevación y balanceo leves con ciclos diferentes; con NFC apagado o no disponible en Android, el barco aparece inclinado y quieto sobre un banco de arena. Consulta del estado al entrar y al volver a la app. Control temporal eliminado de la entrega 0.2.0; el estado depende únicamente del NFC real; respetar movimiento reducido. La versión con estantería queda guardada en Git (315176e).
 
@@ -94,7 +98,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **VIS-06.** En translúcidos se dibuja el damero del SVG bajo rellenos de color sin solapamiento con opacidad 0,65. Es una constante visual, no editable. El recorte excluye exterior y agujero; nunca reducir la opacidad global ni la de los laterales.
 - **VIS-07.** Componente React SVG inline compartido entre inventario, detalle y formularios, con IDs únicos por instancia, respaldo neutro para colores inválidos, previsualización inmediata y nombres accesibles cuando el icono no sea decorativo.
 - **VIS-08.** «Filamento translúcido» se edita en el catálogo. Mostrar indicación textual en ficha, catálogo y formularios; en las tarjetas compactas se incluye en la descripción accesible sin ampliar los tres datos visibles solicitados.
-- **VIS-11.** Las tarjetas del catálogo usan la muestra helicoidal aportada en `docs/referencias/helice-limpia.svg`, coloreada con los colores ordenados del perfil y damero para translúcidos. Inventario y Mis bobinas mantienen el SVG de bobina. La hélice representa el perfil, independientemente de si la muestra está hecha.
+- **VIS-11.** Las tarjetas del catálogo usan la muestra helicoidal aportada en `docs/referencias/helice-limpia.svg`, coloreada con los colores ordenados del perfil y damero para translúcidos. Inventario y Mis bobinas mantienen el SVG de bobina. La hélice representa el perfil, independientemente de si la muestra está hecha. La etiqueta de material del catálogo tiene aproximadamente la mitad de la altura del SVG (38 px frente a 76 px), con texto centrado y más legible.
 
 - **VIS-09.** Añadir ejemplos locales temporales de las ocho combinaciones y colores blanco/negro, inspirados en familias Bambu Lab. Identificarlos internamente y permitir limpiarlos desde Configuración sin borrar unidades creadas por el usuario. Las combinaciones ficticias deben indicarse como tales.
 
@@ -107,7 +111,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 - **CAT-07.** Cada perfil tiene un indicador compartido **«Muestra hecha / No hecha»**. No se necesita registrar quién tiene la muestra ni dónde está. En las tarjetas se muestra solo un indicador no interactivo: palabra «Muestra» seguida de círculo con marca verde si está hecha, círculo con guion neutro si está pendiente. Se modifica desde el formulario de edición de filamento.
 - **CAT-08.** Agotar o retirar una unidad no elimina su perfil ni cambia el indicador de muestra.
 - **CAT-09.** No eliminar perfiles con unidades asociadas, incluidas las retiradas, para preservar la integridad del historial.
-- **CAT-10.** Se quiere valorar un catálogo inicial con datos de Bambu Lab. La fuente, importación y actualización todavía no están acordadas; no asumir que existen datos disponibles o ya verificados.
+- **CAT-10.** El 19/11/2026 se autorizó importar las familias solicitadas de Bambu Lab y Winkle PLA HD Texture, a partir de 3dfilamentprofiles.com o fuentes oficiales autorizadas como alternativa. No inventar HEX ni otros datos; listar perfiles incompletos aparte. El usuario confirmó que los datos existentes entonces eran de prueba y autorizó su reemplazo, preservando cuentas y ubicaciones. Se entregó el SQL y el usuario confirmó la carga. No repetir ese reemplazo ni extender la autorización de borrado a datos posteriores; futuras ampliaciones incrementales. Fuentes y pendientes en supabase/catalog/README.md.
 
 ### Colores
 
@@ -159,7 +163,7 @@ Este documento recoge las decisiones del usuario y los requisitos del documento 
 
 ## 8. Modelo de datos de referencia
 
-Esquema conceptual, todavía sin migraciones SQL. Los nombres pueden adaptarse a convenciones técnicas sin cambiar su significado.
+Esquema implementado en supabase/migrations/202611190001_spoolio.sql; aplicado al proyecto según confirmación del usuario; comprobación remota de salud correcta. Los nombres pueden adaptarse a convenciones técnicas sin cambiar su significado.
 
 | Entidad | Función |
 | --- | --- |
@@ -201,7 +205,7 @@ Las relaciones entre entidades deben pertenecer al mismo inventario. Aplicar est
 - **TEC-05.** Incluir pruebas significativas de permisos, asociación de etiquetas y transferencias.
 - **TEC-06.** Documentar la exportación de datos para facilitar copias y futura migración.
 - **TEC-07.** El Pixel está disponible, pero no puede conectarse por USB al ordenador actual. Las pruebas físicas podrán realizarse desde el ordenador de casa. No se ha confirmado la instalación de Android Studio ni la posibilidad de instalar herramientas aquí.
-- **TEC-08.** No se ha confirmado que exista ya un proyecto Supabase configurado.
+- **TEC-08.** Proyecto Supabase comunicado el 19/11/2026; URL/clave pública configuradas localmente y esquema inicial confirmado por el usuario; pendiente validación de operaciones autenticadas.
 
 ## 10. Recorrido de implementación propuesto
 
@@ -211,11 +215,11 @@ Las relaciones entre entidades deben pertenecer al mismo inventario. Aplicar est
 4. Incorporar el recorrido NFC: escanear → registrar o asociar ambas etiquetas → consultar → mover explícitamente.
 5. Validar entre cuentas y en el Pixel; ajustar UX con el usuario.
 
-El paso 1 está completado. El usuario ha solicitado avanzar con el recorrido manual del paso 3 y posponer la base de datos.
+El recorrido local está implementado. El 19/11/2026 el usuario autoriza conectar Supabase gratuito, con monitor externo de solo lectura.
 
 ### Etapa local autorizada
 
-- **DEMO-01.** Construir el recorrido manual antes de conectar una base de datos externa. Supabase no requiere el NUC, pero su configuración queda aplazada por decisión del usuario.
+- **DEMO-01.** Construir el recorrido manual antes de conectar una base de datos externa. Supabase no requiere el NUC. Aplazamiento inicial sustituido por autorización del 19/11/2026 para el plan gratuito alojado.
 - **DEMO-02.** Usar almacenamiento local separado, identificado como demostración, para probar el flujo. No es sincronización compartida ni soporte offline de producción.
 - **DEMO-03.** Sustituir provisionalmente el inicio de sesión real por selección explícita de perfil demo. No solicitar ni almacenar contraseñas ficticias. Correo y contraseña siguen siendo el requisito para la versión conectada.
 - **DEMO-04.** La implementación local usa provisionalmente los cuatro niveles propuestos por el usuario. Su redacción definitiva sigue pendiente.
@@ -238,15 +242,18 @@ El paso 1 está completado. El usuario ha solicitado avanzar con el recorrido ma
 - Decidir cómo registrar incidencias o ausencia de etiquetas.
 - Confirmar si se necesita un campo de notas por unidad; no se ha acordado después de simplificar la ficha.
 - Definir el alta inicial y gestión de miembros autorizados.
-- Confirmar proyecto Supabase y herramientas Android disponibles.
+- Validar operaciones autenticadas en Supabase; preparar herramientas Android y firma en el equipo de casa.
 - Elegir dependencias tras verificar su compatibilidad.
-- Concretar origen y mantenimiento de un eventual catálogo Bambu.
+- Completar los 17 perfiles pendientes del catálogo (el SQL inicial ya está cargado según el usuario); mantenimiento posterior mediante cargas incrementales.
 - Diseñar pantallas, acciones de retirada y posible restauración de unidades; restaurar no es todavía un requisito confirmado.
 
 ## 13. Registro de cambios
 
 | Fecha | Cambio |
 | --- | --- |
+| 2026-11-19 | Catálogo oficial preparado (270 perfiles / 292 colores, 17 pendientes), reemplazo de datos de prueba autorizado; carga remota confirmada por el usuario. Cambio de contraseña y tema SVG en Configuración. Guardar/subir Git para continuar en casa; nueva APK solo bajo petición posterior. |
+| 2026-11-19 | Autorizados Supabase gratuito, cuentas reales e inventario compartido; monitor de solo lectura en otro mini PC, sin garantía de evitar pausas. |
+| 2026-11-18 | Avisos de éxito flotantes con cierre automático a los 5 segundos y × manual. Cambio web pendiente de APK. |
 | 2026-11-17 | Próxima APK: Escanear sin botón de cancelar; reintento solo tras fallo de lectura. Cambio web posterior a 0.2.1. |
 | 2026-11-17 | Autorizada APK 0.2.1 (código 4) con selector de ubicación táctil corregido, pulsación larga y guardado sin aviso. |
 | 2026-11-17 | Corregida apertura táctil del selector de ubicación y eliminado su aviso de guardado correcto. |
